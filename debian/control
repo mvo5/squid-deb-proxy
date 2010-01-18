@@ -1,0 +1,19 @@
+Source: squid-deb-proxy
+Section: net
+Priority: extra
+Maintainer: Michael Vogt <mvo@ubuntu.com>
+Build-Depends: debhelper (>= 7.0.50),
+               gettext,
+               intltool,
+Standards-Version: 3.8.3
+Vcs-Bzr: https://code.launchpad.net/~mvo/+junk/squid-deb-proxy
+
+Package: squid-deb-proxy
+Architecture: all
+Depends: ${python:Depends},
+         ${misc:Depends},
+	 squid
+Description: Squid proxy configuration optimized for deb packages
+ This package contains a squid proxy configuration that is optimized
+ for downloading deb packages. It defaults to a different cache 
+ directory and port than the regular squid cache.
