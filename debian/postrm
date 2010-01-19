@@ -1,0 +1,12 @@
+#!/bin/sh
+
+set -e
+
+if [ "$1" = "purge" ]; then
+   rm -rf /var/cache/squid-deb-proxy
+   rm -rf /var/log/squid-deb-proxy
+   rm -f /etc/squid-deb-proxy/squid-deb-proxy.conf
+fi
+
+#DEBHELPER#
+
