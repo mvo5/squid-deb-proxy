@@ -17,3 +17,6 @@ Description: Squid proxy configuration optimized for deb packages
  This package contains a squid proxy configuration that is optimized
  for downloading deb packages. It defaults to a different cache 
  directory and port than the regular squid cache.
+ .
+ The config default to allowing cached access from a local network
+ to *.archive.ubuntu.com.
