@@ -1,10 +1,15 @@
-squid-deb-proxy (0.1) UNRELEASED; urgency=low
+squid-deb-proxy (0.2) UNRELEASEDlucid; urgency=low
 
-  * initial version
   * README:
     - add documentation
   * *.acl:
     - split the bits that the user will most likely change into 
       different files
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Fri, 22 Jan 2010 12:13:50 +0100
+
+squid-deb-proxy (0.1) lucid; urgency=low
+
+  * initial version
 
  -- Michael Vogt <michael.vogt@ubuntu.com>  Mon, 18 Jan 2010 12:11:19 +0100
