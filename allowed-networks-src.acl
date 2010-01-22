@@ -1,0 +1,10 @@
+# allowed-networks-src.conf
+# 
+# network sources that you want to allow access to the cache
+
+# private networks
+10.0.0.0/8 
+172.16.0.0/12
+192.168.0.0/16
+
+# add your own here (if you need non-private network access)

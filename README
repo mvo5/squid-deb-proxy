@@ -1,2 +1,11 @@
-This package provides a squid proxy config optimized for downloading
-deb packages.
+This package provides a squid proxy config optimized for caching
+deb packages on Ubuntu systems.
+
+It should work out of the box on port 8000 for most users.
+
+It will allow access to .archive.ubuntu.com and changelogs.ubuntu.com 
+by default from any private (10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16) 
+network. To customize these settings check /etc/squid-deb-proxy/*.acl
+
+To customize you the general config, edit the file
+/etc/squid-deb-proxy/squid-deb-proxy.conf
