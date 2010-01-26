@@ -1,3 +1,10 @@
+squid-deb-proxy (0.2.2) lucid; urgency=low
+
+  * mirror-dstdomain.acl:
+    - add security.ubuntu.com to the allowed destdomains
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Tue, 26 Jan 2010 09:19:50 +0100
+
 squid-deb-proxy (0.2.1) lucid; urgency=low
 
   * initial lucid upload
