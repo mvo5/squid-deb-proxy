@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 7.0.50),
                gettext,
                intltool,
 Standards-Version: 3.8.3
-Vcs-Bzr: https://code.launchpad.net/~mvo/+junk/squid-deb-proxy
+Vcs-Bzr: https://code.launchpad.net/~squid-deb-proxy-developers/squid-deb-proxy/trunk
 
 Package: squid-deb-proxy
 Architecture: all

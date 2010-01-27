@@ -1,3 +1,10 @@
+squid-deb-proxy (0.2.3) lucid; urgency=low
+
+  * debian/control:
+    - move Vcs to lp:~squid-deb-proxy-developers/squid-deb-proxy/trunk
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Wed, 27 Jan 2010 15:02:15 +0100
+
 squid-deb-proxy (0.2.2) lucid; urgency=low
 
   * mirror-dstdomain.acl:
