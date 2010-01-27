@@ -2,6 +2,7 @@ squid-deb-proxy (0.2.3) lucid; urgency=low
 
   * debian/control:
     - move Vcs to lp:~squid-deb-proxy-developers/squid-deb-proxy/trunk
+    - add homepage
   * mirror-dstdomain.acl:
     - add ports.ubuntu.com
 
