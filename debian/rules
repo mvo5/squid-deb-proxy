@@ -2,3 +2,7 @@
 
 %:
 	dh $@
+
+override_dh_installinit:
+	dh_installinit $@
+	dh_installinit --name=squid-deb-proxy-avahi

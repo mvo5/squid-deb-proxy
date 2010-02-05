@@ -1,0 +1,14 @@
+# squid-deb-proxy-avahi - advertise the proxy over avahi
+# (if avahi is availalble)
+
+description "squid-deb-proxy-avahi"
+
+start on squid-deb-proxy
+stop on stopping squid-deb-proxy
+
+script
+  PORT=$(grep http_port /etc/squid-deb-proxy/squid-deb-proxy.conf|cut -d' ' -f2)
+  if [ -n "$PORT" ] && [ -x /usr/bin/avahi-publish ]; then
+    avahi-publish -s "Squid deb proxy" _apt_proxy._tcp $PORT
+  fi
+end script

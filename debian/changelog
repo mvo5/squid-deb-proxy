@@ -1,3 +1,10 @@
+squid-deb-proxy (0.2.4) UNRELEASED; urgency=low
+
+  * debian/squid-deb-proxy.squid-deb-proxy-avahi.upstart:
+    - advertise the proxy using avahi (if avahi is availalbe)
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Fri, 05 Feb 2010 09:07:49 -0800
+
 squid-deb-proxy (0.2.3) lucid; urgency=low
 
   * debian/control:
