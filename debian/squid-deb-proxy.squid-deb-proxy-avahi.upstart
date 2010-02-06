@@ -6,9 +6,11 @@ description "squid-deb-proxy-avahi"
 start on squid-deb-proxy
 stop on stopping squid-deb-proxy
 
+# get it back with 
+#     avahi-browse -prt _apt_proxy._tcp
 script
   PORT=$(grep http_port /etc/squid-deb-proxy/squid-deb-proxy.conf|cut -d' ' -f2)
   if [ -n "$PORT" ] && [ -x /usr/bin/avahi-publish ]; then
-    avahi-publish -s "Squid deb proxy" _apt_proxy._tcp $PORT
+    exec avahi-publish -s "Squid deb proxy" _apt_proxy._tcp $PORT
   fi
 end script

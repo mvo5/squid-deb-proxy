@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# use avahi to find a _apt_proxy._tcp provider and return
+# a http proxy string suitable for apt
+
+SERVICE="_apt_proxy._tcp"
+
+out=$(avahi-browse -kprt $SERVICE|grep '^=;.*;IPv4;.*'|head -n1)
+IP=$(echo "$out"|cut -d';' -f8)
+PORT=$(echo "$out"|cut -d';' -f9)
+echo "http://$IP:$PORT/"
