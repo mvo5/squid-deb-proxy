@@ -1,4 +1,4 @@
-squid-deb-proxy (0.2.4) UNRELEASED; urgency=low
+squid-deb-proxy (0.3) UNRELEASED; urgency=low
 
   * debian/squid-deb-proxy.squid-deb-proxy-avahi.upstart:
     - advertise the proxy using avahi (if avahi is availalbe)
@@ -7,6 +7,8 @@ squid-deb-proxy (0.2.4) UNRELEASED; urgency=low
   * apt-avahi-discover:
     - provide a avahi based module suitable for apts 
       Acquire::http::ProxyAutoDetect option
+  * 30autoproxy:
+    - add apt configuration that automatically uses apt-avahi-discover
 
  -- Michael Vogt <michael.vogt@ubuntu.com>  Fri, 05 Feb 2010 09:07:49 -0800
 

@@ -22,3 +22,14 @@ Description: Squid proxy configuration optimized for deb packages
  .
  The config default to allowing cached access from a local network
  to *.archive.ubuntu.com.
+
+Package: squid-deb-proxy-client
+Architecture: all
+Depends: ${misc:Depends}, avahi-utils
+Description: Automatic proxy discovery for apt based on avahi
+ This package contains a helper for the apt http method to discover
+ proxies that publish their service as _apt_proxy._tcp.
+ .
+ It was written to be installed on clients that should use 
+ squid-deb-proxy automatically, but it will work with any proxy
+ that publishes the service as _apt_proxy._tcp.
