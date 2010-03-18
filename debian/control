@@ -25,7 +25,7 @@ Description: Squid proxy configuration optimized for deb packages
 
 Package: squid-deb-proxy-client
 Architecture: all
-Depends: ${misc:Depends}, avahi-utils
+Depends: ${misc:Depends}, avahi-utils, apt (>= 0.7.25.3ubuntu1)
 Description: Automatic proxy discovery for apt based on avahi
  This package contains a helper for the apt http method to discover
  proxies that publish their service as _apt_proxy._tcp.
