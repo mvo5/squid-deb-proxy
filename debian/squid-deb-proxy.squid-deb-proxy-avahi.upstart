@@ -3,7 +3,7 @@
 
 description "squid-deb-proxy-avahi"
 
-start on squid-deb-proxy
+start on (squid-deb-proxy and avahi-daemon)
 stop on stopping squid-deb-proxy
 
 # get it back with 
