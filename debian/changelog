@@ -1,11 +1,12 @@
-squid-deb-proxy (0.3.1) UNRELEASEDlucid; urgency=low
+squid-deb-proxy (0.3.1) lucid; urgency=low
 
   * debian/squid-deb-proxy.squid-deb-proxy-avahi.upstart:
     - start only once avahi-daemon is available (thanks to dholbach)
   * debian/control:
     - add dependency on apt for squid-deb-proxy-client
+  (thanks to dholbach)
 
- -- Michael Vogt <michael.vogt@ubuntu.com>  Thu, 18 Mar 2010 13:03:04 +0100
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Thu, 18 Mar 2010 15:05:12 +0100
 
 squid-deb-proxy (0.3) lucid; urgency=low
 
