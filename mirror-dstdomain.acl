@@ -7,8 +7,17 @@
 ports.ubuntu.com 
 security.ubuntu.com
 
+#official third party repositories
+archive.canonical.com
+extras.ubuntu.com
+
 # default changelogs location, this includes changelogs and the meta-release
 # file that has information about new ubuntu versions
 changelogs.ubuntu.com
 
+# launchpad personal package archives
+#ppa.launchpad.net
+
 # add additional mirror domains here
+#linux.dropbox.com
+#download.virtualbox.org

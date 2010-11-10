@@ -1,3 +1,11 @@
+squid-deb-proxy (0.3.2) unstable; urgency=low
+
+  [ Colin Dean ]
+  * adding other ubuntu/canonical repos and some suggested 
+    others (but commented) (LP: #673080)
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Wed, 10 Nov 2010 09:53:49 +0100
+
 squid-deb-proxy (0.3.1) lucid; urgency=low
 
   * debian/squid-deb-proxy.squid-deb-proxy-avahi.upstart:
