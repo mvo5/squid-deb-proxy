@@ -9,6 +9,9 @@ squid-deb-proxy (0.3.2) UNRELEASED; urgency=low
   [ Michael Vogt ]
   * README: 
     - updated to document the new options
+  * debian/squid-deb-proxy.squid-deb-proxy-avahi.upstart:
+    - fix upstart script so that the avahi service actually gets
+      started (LP: #655187)
 
  -- Michael Vogt <michael.vogt@ubuntu.com>  Wed, 10 Nov 2010 09:53:49 +0100
 
