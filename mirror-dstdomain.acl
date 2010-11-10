@@ -21,3 +21,6 @@ changelogs.ubuntu.com
 # add additional mirror domains here (disabled by default)
 #linux.dropbox.com
 #download.virtualbox.org
+#archive.getdeb.net
+#packages.medibuntu.org
+#dl.google.com
