@@ -1,8 +1,14 @@
-squid-deb-proxy (0.3.2) unstable; urgency=low
+squid-deb-proxy (0.3.2) UNRELEASED; urgency=low
 
   [ Colin Dean ]
   * adding other ubuntu/canonical repos and some suggested 
     others (but commented) (LP: #673080)
+  * Added commented lines which allow non-specified domains to be 
+    accessed and (optionally) cached
+
+  [ Michael Vogt ]
+  * README: 
+    - updated to document the new options
 
  -- Michael Vogt <michael.vogt@ubuntu.com>  Wed, 10 Nov 2010 09:53:49 +0100
 
