@@ -4,7 +4,7 @@
 description "squid-deb-proxy-avahi"
 
 start on (started squid-deb-proxy and started avahi-daemon)
-stop on stopping squid-deb-proxy
+stop on stopped squid-deb-proxy
 
 # get it back with 
 #     avahi-browse -prt _apt_proxy._tcp
