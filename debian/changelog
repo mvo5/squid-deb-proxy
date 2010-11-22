@@ -1,11 +1,3 @@
-squid-deb-proxy (0.3.4) UNRELEASED; urgency=low
-
-  * debian/squid-deb-proxy-client.postrm:
-    - remove apt config on removal to ensure that update keeps
-      working (LP: #654393)
-
- -- Michael Vogt <michael.vogt@ubuntu.com>  Wed, 10 Nov 2010 15:44:39 +0100
-
 squid-deb-proxy (0.3.3) natty; urgency=low
 
   * Adjusting upstart job so restarting squid-deb-proxy does not result
