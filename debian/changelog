@@ -1,3 +1,10 @@
+squid-deb-proxy (0.3.4) natty; urgency=low
+
+  * Removing expect fork and passing -N to squid to prevent upstart
+    losing track of squid on reload (LP: #573853)
+
+ -- Clint Byrum <clint@ubuntu.com>  Tue, 11 Jan 2011 15:07:37 -0800
+
 squid-deb-proxy (0.3.3) natty; urgency=low
 
   * Adjusting upstart job so restarting squid-deb-proxy does not result
