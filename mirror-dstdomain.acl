@@ -6,6 +6,7 @@
 .archive.ubuntu.com 
 ports.ubuntu.com 
 security.ubuntu.com
+ddebs.ubuntu.com
 
 #official third party repositories
 archive.canonical.com
@@ -24,3 +25,4 @@ changelogs.ubuntu.com
 #archive.getdeb.net
 #packages.medibuntu.org
 #dl.google.com
+

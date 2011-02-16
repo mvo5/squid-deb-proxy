@@ -1,3 +1,10 @@
+squid-deb-proxy (0.3.5) UNRELEASED; urgency=low
+
+  * mirror-dstdomain.acl:
+    - add ddebs.ubuntu.com to default mirrors
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Wed, 16 Feb 2011 20:17:52 +0100
+
 squid-deb-proxy (0.3.4) natty; urgency=low
 
   * Removing expect fork and passing -N to squid to prevent upstart
