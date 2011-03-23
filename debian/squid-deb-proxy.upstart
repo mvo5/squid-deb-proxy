@@ -30,7 +30,9 @@ EOF
   fi
 end script
 
-pre-stop script
+# if this is done in pre-stop "restart squid-deb-proxy" kills the
+# file without putting a replacement in!
+post-stop script
   if [ -f $AVAHIFILE ]
   then
   	rm $AVAHIFILE
