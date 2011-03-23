@@ -3,11 +3,37 @@
 
 description "squid-deb-proxy"
 
+env AVAHIFILE=/etc/avahi/services/squid-deb-proxy.service
+
 pre-start script
   install -d -o proxy -g proxy -m 750 /var/cache/squid-deb-proxy/
   install -d -o proxy -g proxy -m 750 /var/log/squid-deb-proxy/
   if [ ! -d /var/cache/squid-deb-proxy/00 ]; then
    squid -z -f /etc/squid-deb-proxy/squid-deb-proxy.conf
+  fi
+end script
+
+post-start script
+  PORT=$(grep http_port /etc/squid-deb-proxy/squid-deb-proxy.conf|cut -d' ' -f2)
+  if [ -n "$PORT" ] && [ -d /etc/avahi/services/ ]; then
+   cat > $AVAHIFILE << EOF
+<?xml version="1.0" standalone='no'?>
+<!DOCTYPE service-group SYSTEM "avahi-service.dtd">
+<service-group>
+	<name replace-wildcards="yes">Squid deb proxy on %h</name>
+	<service protocol="ipv4">
+		<type>_apt_proxy._tcp</type>
+		<port>$PORT</port>
+	</service>
+</service-group>
+EOF
+  fi
+end script
+
+pre-stop script
+  if [ -f $AVAHIFILE ]
+  then
+  	rm $AVAHIFILE
   fi
 end script
 
