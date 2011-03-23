@@ -6,6 +6,7 @@
 SERVICE="_apt_proxy._tcp"
 
 out=$(avahi-browse -kprt $SERVICE|grep '^=;.*;IPv4;.*'|head -n1)
-IP=$(echo "$out"|cut -d';' -f8)
-PORT=$(echo "$out"|cut -d';' -f9)
+PORT=$(echo "$out" | cut -d ';' -f9)
+HOST=$(echo "$out" | cut -d ';' -f7)
+IP=$(avahi-resolve -n4 "$HOST" | cut -f2)
 echo "http://$IP:$PORT/"
