@@ -14,4 +14,4 @@ install:
 	install -m 644 mirror-dstdomain.acl $(DESTDIR)/etc/squid-deb-proxy/
 	# client
 	install -m 755 apt-avahi-discover $(DESTDIR)/usr/share/squid-deb-proxy-client/
-	install -m 755 30autoproxy $(DESTDIR)/etc/apt/apt.conf.d
+	install -m 644 30autoproxy $(DESTDIR)/etc/apt/apt.conf.d

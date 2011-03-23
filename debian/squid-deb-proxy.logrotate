@@ -1,0 +1,15 @@
+#
+# Logrotate fragment for squid-deb-proxy.
+#
+/var/log/squid-deb-proxy/*.log {
+ daily
+ compress
+ delaycompress
+ rotate 2
+ missingok
+ nocreate
+ sharedscripts
+ postrotate
+  test ! -e /var/run/squid-deb-proxy.pid || /usr/sbin/squid -f /etc/squid-deb-proxy/squid-deb-proxy.conf -k rotate
+ endscript
+}
