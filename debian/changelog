@@ -1,4 +1,4 @@
-squid-deb-proxy (0.4.1) UNRELEASEDnatty; urgency=low
+squid-deb-proxy (0.4.1) natty; urgency=low
 
   * remove obsolete conffile on upgrade:
     /etc/init/squid-deb-proxy-avahi.conf
