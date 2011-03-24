@@ -1,3 +1,10 @@
+squid-deb-proxy (0.4.1) UNRELEASEDnatty; urgency=low
+
+  * remove obsolete conffile on upgrade:
+    /etc/init/squid-deb-proxy-avahi.conf
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Thu, 24 Mar 2011 08:51:41 +0100
+
 squid-deb-proxy (0.4) natty; urgency=low
 
   * mirror-dstdomain.acl:
