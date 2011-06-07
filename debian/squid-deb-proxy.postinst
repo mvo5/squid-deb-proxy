@@ -23,48 +23,74 @@ set -e
 case "$1" in
     configure)
 
+        # the users allowed networks, this is not a conffile so its created
+        # here
+        USER_NETWORKS=/etc/squid-deb-proxy/user-allowed-networks-src.acl
+        if [ ! -f "$USER_NETWORKS" ]; then
+            cat > "$USER_NETWORKS" <<EOF
+# user-allowed-networks-src.conf
+# 
+# additional network sources that you want to allow access to the cache
+
+# all
+#0.0.0.0/0.0.0.0
+EOF
+        fi
+
+        # the users allowed destinations, this is not a conffile 
+        USER_ALLOWED_DESTINATIONS=/etc/squid-deb-proxy/user-mirror-dstdomain.acl
+        if [ ! -f "$USER_ALLOWED_DESTINATIONS" ]; then
+            cat > "$USER_ALLOWED_DESTINATIONS" <<EOF
+# user-mirror-dstdomain.conf
+# 
+# network destinations that are allowed by this cache
+
+# launchpad personal package archives (disabled by default)
+#ppa.launchpad.net
+
+# add additional mirror domains here (disabled by default)
+#linux.dropbox.com
+#download.virtualbox.org
+#archive.getdeb.net
+#packages.medibuntu.org
+#dl.google.com
+EOF
+        fi
+
+        # get the debconf answers
         db_get squid-deb-proxy/ppa-enable
-        case "$RET" in
-            false)
-                if [ -f "/etc/squid-deb-proxy/mirror-dstdomain.acl" ]
-                then
-                    sed -i 's/ppa.launchpad.net/#ppa.launchpad.net/' /etc/squid-deb-proxy/mirror-dstdomain.acl
-                fi
+        if [ -f "$USER_ALLOWED_DESTINATIONS" ]; then
+            case "$RET" in
+                false)
+                    sed -i 's/^ppa.launchpad.net/#ppa.launchpad.net/' "$USER_ALLOWED_DESTINATIONS"
                 ;;
-            true)
-                if [ -f "/etc/squid-deb-proxy/mirror-dstdomain.acl" ]
-                then
-                    sed -i 's/#ppa.launchpad.net/ppa.launchpad.net/' /etc/squid-deb-proxy/mirror-dstdomain.acl
-                fi
-                ;;
-            *)
-                echo "db_get returned unexpected result: '$RET' for squid-deb-proxy/ppa-enable"
-                exit 1
-                ;;
+                true)
+                    sed -i 's/^#ppa.launchpad.net/ppa.launchpad.net/' "$USER_ALLOWED_DESTINATIONS"
+                    ;;
+                *)
+                    echo "db_get returned unexpected result: '$RET' for squid-deb-proxy/ppa-enable"
+                    exit 1
+                    ;;
             esac
+        fi
         
         db_get squid-deb-proxy/acl-disable
-        case "$RET" in
-            false)
-                if [ -f "/etc/squid-deb-proxy/squid-deb-proxy.conf" ]
-                then
-                    sed -i 's/^http_access allow all$/http_access deny all/' /etc/squid-deb-proxy/squid-deb-proxy.conf
-                fi
-                ;;
-            true)
-                if [ -f "/etc/squid-deb-proxy/squid-deb-proxy.conf" ]
-                then
-                    sed -i 's/^http_access deny all$/http_access allow all/' /etc/squid-deb-proxy/squid-deb-proxy.conf
-                    rm -f /etc/squid-deb-proxy/.squid-deb-proxy.conf
-                fi
-                ;;
-            *)
-                echo "db_get returned unexpected result: '$RET' for squid-deb-proxy/acl-enable"
-                exit 1
-                ;;
-        esac
+        if [ -f "/etc/squid-deb-proxy/squid-deb-proxy.conf" ]; then
+            case "$RET" in
+                false)
+                    sed -i 's/^0.0.0.0\/0.0.0.0/#0.0.0.0\/0.0.0.0/' "$USER_NETWORKS" 
+                    ;;
+                true)
+                    sed -i 's/^#0.0.0.0\/0.0.0.0/0.0.0.0\/0.0.0.0/' "$USER_NETWORKS" 
+                    ;;
+                *)
+                    echo "db_get returned unexpected result: '$RET' for squid-deb-proxy/acl-disable"
+                    exit 1
+                    ;;
+            esac
+        fi
 
-        invoke-rc.d squid-deb-proxy restart
+        invoke-rc.d squid-deb-proxy restart || true
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure|triggered)

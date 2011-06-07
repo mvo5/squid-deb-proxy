@@ -1,0 +1,12 @@
+#!/bin/sh
+
+set -e
+
+if [ "$1" = "purge" ]; then
+   rm -f /etc/squid-deb-proxy/user-mirror-dstdomain.acl
+   rm -f /etc/squid-deb-proxy/user-allowed-networks-src.acl
+fi
+
+#DEBHELPER#
+
+exit 0

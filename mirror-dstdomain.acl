@@ -17,13 +17,5 @@ extras.ubuntu.com
 # file that has information about new ubuntu versions
 changelogs.ubuntu.com
 
-# launchpad personal package archives (disabled by default)
-#ppa.launchpad.net
-
-# add additional mirror domains here (disabled by default)
-#linux.dropbox.com
-#download.virtualbox.org
-#archive.getdeb.net
-#packages.medibuntu.org
-#dl.google.com
-
+# additional destinations can be added to the file:
+#  /etc/squid-deb-proxy/user-mirror-destdomain.acl
