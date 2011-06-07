@@ -48,13 +48,13 @@ case "$1" in
             false)
                 if [ -f "/etc/squid-deb-proxy/squid-deb-proxy.conf" ]
                 then
-                    sed -i 's/http_access allow all/http_access deny all/' /etc/squid-deb-proxy/squid-deb-proxy.conf
+                    sed -i 's/^http_access allow all$/http_access deny all/' /etc/squid-deb-proxy/squid-deb-proxy.conf
                 fi
                 ;;
             true)
                 if [ -f "/etc/squid-deb-proxy/squid-deb-proxy.conf" ]
                 then
-                    sed -i 's/http_access deny all/http_access allow all/' /etc/squid-deb-proxy/squid-deb-proxy.conf
+                    sed -i 's/^http_access deny all$/http_access allow all/' /etc/squid-deb-proxy/squid-deb-proxy.conf
                     rm -f /etc/squid-deb-proxy/.squid-deb-proxy.conf
                 fi
                 ;;
