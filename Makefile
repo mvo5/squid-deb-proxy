@@ -2,6 +2,7 @@
 
 all:
 	echo "nothing to do"
+	make -C avahi
 
 install:
 	# dir
