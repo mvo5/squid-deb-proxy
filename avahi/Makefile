@@ -1,5 +1,5 @@
 CFLAGS := $(shell pkg-config --cflags avahi-core) -g -Wall
-LDFLAGS := $(shell pkg-config --libs avahi-core) -ldebian-installer
+LDFLAGS := $(shell pkg-config --libs avahi-core)
 
 all: find_squid_deb_proxy
 

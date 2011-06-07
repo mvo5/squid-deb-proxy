@@ -49,23 +49,9 @@
 static AvahiSimplePoll *simple_poll = NULL;
 static AvahiServer *server = NULL;
 
-static di_hash_table *resolver_hash = NULL;
-
 static int debug = 0;
 
 static void quiet_logger(AvahiLogLevel level, const char *txt) {
-}
-
-static bool resolver_equal_func(const void *key1, const void *key2) {
-    return !strcmp((const char *) key1, (const char *) key2);
-}
-
-static uint32_t resolver_hash_func(const void *key) {
-    /* save reimplementing our own hash algorithm ... */
-    di_rstring rstring;
-    rstring.string = (char *) key;
-    rstring.size = strlen(key);
-    return di_rstring_hash(&rstring);
 }
 
 static void resolve_callback(
@@ -104,7 +90,8 @@ static void resolve_callback(
                 key = avahi_strdup_printf("%s:%u", ipaddr_value, port);
                 avahi_free(ipaddr_value);
                 avahi_free(ipaddr_key);
-            } else if (avahi_address_snprint(human_address, AVAHI_ADDRESS_STR_MAX, address)) {
+            } 
+            else if (avahi_address_snprint(human_address, AVAHI_ADDRESS_STR_MAX, address)) {
                 if (address->proto == AVAHI_PROTO_INET6)
                     key = avahi_strdup_printf("[%s]:%u", human_address, port);
                 else if (strncmp(human_address, "169.254.169.254", 15) == 0)
@@ -117,15 +104,7 @@ static void resolve_callback(
             }
             avahi_free(human_address);
 
-            if (di_hash_table_lookup(resolver_hash, key)) {
-                if (debug)
-                    fprintf(stderr, "(Resolver) Already seen %s\n", key);
-                free(key);
-            } else {
-
-                printf("http://%s/\n", key);
-                /* don't free key; di_hash_table_insert doesn't copy it */
-            }
+            printf("http://%s/\n", key);
         }
     }
 
@@ -233,18 +212,12 @@ int main(AVAHI_GCC_UNUSED int argc, AVAHI_GCC_UNUSED char*argv[]) {
         goto fail;
     }
 
-    /* Create a hash table so we can uniquify resolver results */
-    resolver_hash = di_hash_table_new_full(resolver_hash_func, resolver_equal_func, avahi_free, NULL);
-
     /* Run the main loop */
     avahi_simple_poll_loop(simple_poll);
 
     ret = 0;
 
 fail:
-
-    if (resolver_hash)
-        di_hash_table_destroy (resolver_hash);
 
     /* Cleanup things */
     if (sb)
