@@ -28,17 +28,13 @@ case "$1" in
             n*|N*)
                 if [ -f "/etc/squid-deb-proxy/mirror-dstdomain.acl" ]
                 then
-                    mv -f /etc/squid-deb-proxy/mirror-dstdomain.acl /etc/squid-deb-proxy/.mirror-dstdomain.acl
-                    sed 's/ppa.launchpad.net/#ppa.launchpad.net/' /etc/squid-deb-proxy/.mirror-dstdomain.acl > /etc/squid-deb-proxy/mirror-dstdomain.acl
-                    rm -f /etc/squid-deb-proxy/.mirror-dstdomain.acl
+                    sed -i 's/ppa.launchpad.net/#ppa.launchpad.net/' /etc/squid-deb-proxy/mirror-dstdomain.acl
                 fi
                 ;;
             y*|Y*)
                 if [ -f "/etc/squid-deb-proxy/mirror-dstdomain.acl" ]
                 then
-                    mv -f /etc/squid-deb-proxy/mirror-dstdomain.acl /etc/squid-deb-proxy/.mirror-dstdomain.acl
-                    sed 's/#ppa.launchpad.net/ppa.launchpad.net/' /etc/squid-deb-proxy/.mirror-dstdomain.acl > /etc/squid-deb-proxy/mirror-dstdomain.acl
-                    rm -f /etc/squid-deb-proxy/.mirror-dstdomain.acl
+                    sed -i 's/#ppa.launchpad.net/ppa.launchpad.net/' /etc/squid-deb-proxy/mirror-dstdomain.acl
                 fi
                 ;;
             *)
@@ -52,17 +48,14 @@ case "$1" in
             n*|N*)
                 if [ -f "/etc/squid-deb-proxy/squid-deb-proxy.conf" ]
                 then
-                    mv -f /etc/squid-deb-proxy/squid-deb-proxy.conf /etc/squid-deb-proxy/.squid-deb-proxy.conf
-                    sed 's/http_access deny all/http_access allow all/' /etc/squid-deb-proxy/.squid-deb-proxy.conf > /etc/squid-deb-proxy/squid-deb-proxy.conf
+                    sed -i 's/http_access deny all/http_access allow all/' /etc/squid-deb-proxy/squid-deb-proxy.conf
                     rm -f /etc/squid-deb-proxy/.squid-deb-proxy.conf
                 fi
                 ;;
             y*|Y*)
                 if [ -f "/etc/squid-deb-proxy/squid-deb-proxy.conf" ]
                 then
-                    mv -f /etc/squid-deb-proxy/squid-deb-proxy.conf /etc/squid-deb-proxy/.squid-deb-proxy.conf
-                    sed 's/http_access allow all/http_access deny all/' /etc/squid-deb-proxy/.squid-deb-proxy.conf > /etc/squid-deb-proxy/squid-deb-proxy.conf
-                    rm -f /etc/squid-deb-proxy/.squid-deb-proxy.conf
+                    sed -i 's/http_access allow all/http_access deny all/' /etc/squid-deb-proxy/squid-deb-proxy.conf
                 fi
                 ;;
             *)
