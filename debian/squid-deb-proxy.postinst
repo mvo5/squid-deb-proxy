@@ -24,50 +24,52 @@ case "$1" in
     configure)
 
         db_get squid-deb-proxy/ppa-enable
-        if [ "${RET}z" != "z" ]
-        then
-            case "$RET" in
-                n*|N*)
-                    if [ -f "/etc/squid-deb-proxy/mirror-dstdomain.acl" ]
-                        then
-                        mv -f /etc/squid-deb-proxy/mirror-dstdomain.acl /etc/squid-deb-proxy/.mirror-dstdomain.acl
-                        sed 's/ppa.launchpad.net/#ppa.launchpad.net/' /etc/squid-deb-proxy/.mirror-dstdomain.acl > /etc/squid-deb-proxy/mirror-dstdomain.acl
-                        rm -f /etc/squid-deb-proxy/.mirror-dstdomain.acl
-                    fi
-                    ;;
-                y*|Y*)
-                    if [ -f "/etc/squid-deb-proxy/mirror-dstdomain.acl" ]
-                        then
-                        mv -f /etc/squid-deb-proxy/mirror-dstdomain.acl /etc/squid-deb-proxy/.mirror-dstdomain.acl
-                        sed 's/#ppa.launchpad.net/ppa.launchpad.net/' /etc/squid-deb-proxy/.mirror-dstdomain.acl > /etc/squid-deb-proxy/mirror-dstdomain.acl
-                        rm -f /etc/squid-deb-proxy/.mirror-dstdomain.acl
-                    fi
-                    ;;
+        case "$RET" in
+            n*|N*)
+                if [ -f "/etc/squid-deb-proxy/mirror-dstdomain.acl" ]
+                then
+                    mv -f /etc/squid-deb-proxy/mirror-dstdomain.acl /etc/squid-deb-proxy/.mirror-dstdomain.acl
+                    sed 's/ppa.launchpad.net/#ppa.launchpad.net/' /etc/squid-deb-proxy/.mirror-dstdomain.acl > /etc/squid-deb-proxy/mirror-dstdomain.acl
+                    rm -f /etc/squid-deb-proxy/.mirror-dstdomain.acl
+                fi
+                ;;
+            y*|Y*)
+                if [ -f "/etc/squid-deb-proxy/mirror-dstdomain.acl" ]
+                then
+                    mv -f /etc/squid-deb-proxy/mirror-dstdomain.acl /etc/squid-deb-proxy/.mirror-dstdomain.acl
+                    sed 's/#ppa.launchpad.net/ppa.launchpad.net/' /etc/squid-deb-proxy/.mirror-dstdomain.acl > /etc/squid-deb-proxy/mirror-dstdomain.acl
+                    rm -f /etc/squid-deb-proxy/.mirror-dstdomain.acl
+                fi
+                ;;
+            *)
+                echo "db_get returned unexpected result: '$RET' for squid-deb-proxy/ppa-enable"
+                exit 1
+                ;;
             esac
-        fi
-
+        
         db_get squid-deb-proxy/acl-enable
-        if [ "${RET}z" != "z" ]
-        then
-            case "$RET" in
-                n*|N*)
-                    if [ -f "/etc/squid-deb-proxy/squid-deb-proxy.conf" ]
-                    then
-                        mv -f /etc/squid-deb-proxy/squid-deb-proxy.conf /etc/squid-deb-proxy/.squid-deb-proxy.conf
-                        sed 's/http_access deny all/http_access allow all/' /etc/squid-deb-proxy/.squid-deb-proxy.conf > /etc/squid-deb-proxy/squid-deb-proxy.conf
-                        rm -f /etc/squid-deb-proxy/.squid-deb-proxy.conf
-                    fi
-                    ;;
-                y*|Y*)
-                    if [ -f "/etc/squid-deb-proxy/squid-deb-proxy.conf" ]
-                    then
-                        mv -f /etc/squid-deb-proxy/squid-deb-proxy.conf /etc/squid-deb-proxy/.squid-deb-proxy.conf
-                        sed 's/http_access allow all/http_access deny all/' /etc/squid-deb-proxy/.squid-deb-proxy.conf > /etc/squid-deb-proxy/squid-deb-proxy.conf
-                        rm -f /etc/squid-deb-proxy/.squid-deb-proxy.conf
-                    fi
-                    ;;
-            esac
-        fi
+        case "$RET" in
+            n*|N*)
+                if [ -f "/etc/squid-deb-proxy/squid-deb-proxy.conf" ]
+                then
+                    mv -f /etc/squid-deb-proxy/squid-deb-proxy.conf /etc/squid-deb-proxy/.squid-deb-proxy.conf
+                    sed 's/http_access deny all/http_access allow all/' /etc/squid-deb-proxy/.squid-deb-proxy.conf > /etc/squid-deb-proxy/squid-deb-proxy.conf
+                    rm -f /etc/squid-deb-proxy/.squid-deb-proxy.conf
+                fi
+                ;;
+            y*|Y*)
+                if [ -f "/etc/squid-deb-proxy/squid-deb-proxy.conf" ]
+                then
+                    mv -f /etc/squid-deb-proxy/squid-deb-proxy.conf /etc/squid-deb-proxy/.squid-deb-proxy.conf
+                    sed 's/http_access allow all/http_access deny all/' /etc/squid-deb-proxy/.squid-deb-proxy.conf > /etc/squid-deb-proxy/squid-deb-proxy.conf
+                    rm -f /etc/squid-deb-proxy/.squid-deb-proxy.conf
+                fi
+                ;;
+            *)
+                echo "db_get returned unexpected result: '$RET' for squid-deb-proxy/acl-enable"
+                exit 1
+                ;;
+        esac
 
         invoke-rc.d squid-deb-proxy restart
     ;;

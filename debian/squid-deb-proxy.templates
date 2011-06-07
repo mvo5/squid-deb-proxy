@@ -1,12 +1,15 @@
 Template: squid-deb-proxy/ppa-enable
 Type: boolean
+Default: false
 Description: Enable PPA caching
    squid-deb-proxy by default will not cache ppa repositories
    selecting Y in this option will activate ppa repo caching
 
 Template: squid-deb-proxy/acl-enable
 Type: boolean
+Default: true
 Description: Enable network ACL
    squid-deb-proxy restricts access to the cache by address range
    selecting Y in this option will enable a basic private network range
-   selecting N in this option will allow all IPs to access the cache
+   selecting N in this option will allow unrestricted access of all IPs
+   to access the cache
