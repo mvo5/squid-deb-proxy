@@ -5,6 +5,7 @@ Maintainer: Michael Vogt <mvo@ubuntu.com>
 Build-Depends: debhelper (>= 7.0.50),
                gettext,
                intltool,
+               libavahi-core-dev (>= 0.6.27-2ubuntu2), 
 Standards-Version: 3.8.3
 Vcs-Bzr: https://code.launchpad.net/~squid-deb-proxy-developers/squid-deb-proxy/trunk
 Homepage: https://launchpad.net/squid-deb-proxy
@@ -33,3 +34,18 @@ Description: Automatic proxy discovery for apt based on avahi
  It was written to be installed on clients that should use 
  squid-deb-proxy automatically, but it will work with any proxy
  that publishes the service as _apt_proxy._tcp.
+
+Package: squid-deb-proxy-client-udeb
+XC-Package-Type: udeb
+Section: debian-installer
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}, configured-network,
+Description: Automatic proxy discovery for apt based on avahi (udeb)
+ This package contains a helper for the apt http method to discover
+ proxies that publish their service as _apt_proxy._tcp.
+ .
+ It was written to be installed on clients that should use 
+ squid-deb-proxy automatically, but it will work with any proxy
+ that publishes the service as _apt_proxy._tcp.
+ .
+ This package contains the udeb only
