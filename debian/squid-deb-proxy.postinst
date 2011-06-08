@@ -28,7 +28,7 @@ case "$1" in
         USER_NETWORKS=/etc/squid-deb-proxy/user-allowed-networks-src.acl
         if [ ! -f "$USER_NETWORKS" ]; then
             cat > "$USER_NETWORKS" <<EOF
-# user-allowed-networks-src.conf
+# $USER_NETWORKS
 # 
 # additional network sources that you want to allow access to the cache
 
@@ -41,7 +41,7 @@ EOF
         USER_ALLOWED_DESTINATIONS=/etc/squid-deb-proxy/user-mirror-dstdomain.acl
         if [ ! -f "$USER_ALLOWED_DESTINATIONS" ]; then
             cat > "$USER_ALLOWED_DESTINATIONS" <<EOF
-# user-mirror-dstdomain.conf
+# $USER_ALLOWED_DESTINATIONS
 # 
 # network destinations that are allowed by this cache
 
@@ -56,6 +56,17 @@ EOF
 #dl.google.com
 EOF
         fi
+
+        # pkg blacklist, not a conffile
+        PKG_BLACKLIST_IN=/etc/squid-deb-proxy/user-pkg-blacklist
+        cat > $PKG_BLACKLIST_IN <<EOF
+# $PKG_BLACKLIST_IN
+#
+# packages that should be not allowed for download, one binary packagename
+# per line
+#
+#skype
+EOF
 
         # get the debconf answers
         db_get squid-deb-proxy/ppa-enable
