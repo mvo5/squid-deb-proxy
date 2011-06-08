@@ -17,5 +17,5 @@ extras.ubuntu.com
 # file that has information about new ubuntu versions
 changelogs.ubuntu.com
 
-# additional destinations can be added to the file:
-#  /etc/squid-deb-proxy/user-mirror-destdomain.acl
+# additional destinations can be added to the directory:
+#  /etc/squid-deb-proxy/mirror-destdomain.acl.d

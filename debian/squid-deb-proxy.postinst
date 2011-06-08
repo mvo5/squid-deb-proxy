@@ -25,7 +25,7 @@ case "$1" in
 
         # the users allowed networks, this is not a conffile so its created
         # here
-        USER_NETWORKS=/etc/squid-deb-proxy/user-allowed-networks-src.acl
+        USER_NETWORKS=/etc/squid-deb-proxy/allowed-networks-src.acl.d/10-default
         if [ ! -f "$USER_NETWORKS" ]; then
             cat > "$USER_NETWORKS" <<EOF
 # $USER_NETWORKS
@@ -38,7 +38,7 @@ EOF
         fi
 
         # the users allowed destinations, this is not a conffile 
-        USER_ALLOWED_DESTINATIONS=/etc/squid-deb-proxy/user-mirror-dstdomain.acl
+        USER_ALLOWED_DESTINATIONS=/etc/squid-deb-proxy/mirror-dstdomain.acl.d/10-default
         if [ ! -f "$USER_ALLOWED_DESTINATIONS" ]; then
             cat > "$USER_ALLOWED_DESTINATIONS" <<EOF
 # $USER_ALLOWED_DESTINATIONS
@@ -58,7 +58,7 @@ EOF
         fi
 
         # pkg blacklist, not a conffile
-        PKG_BLACKLIST_IN=/etc/squid-deb-proxy/user-pkg-blacklist
+        PKG_BLACKLIST_IN=/etc/squid-deb-proxy/pkg-blacklist.d/10-default
         cat > $PKG_BLACKLIST_IN <<EOF
 # $PKG_BLACKLIST_IN
 #
@@ -86,7 +86,7 @@ EOF
         fi
         
         db_get squid-deb-proxy/acl-disable
-        if [ -f "/etc/squid-deb-proxy/squid-deb-proxy.conf" ]; then
+        if [ -f "$USER_NETWORKS" ]; then
             case "$RET" in
                 false)
                     sed -i 's/^0.0.0.0\/0.0.0.0/#0.0.0.0\/0.0.0.0/' "$USER_NETWORKS" 

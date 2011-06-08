@@ -7,5 +7,5 @@
 172.16.0.0/12
 192.168.0.0/16
 
-# additional non-private networks can be added to the file:
-#  /etc/squid-deb-proxy/user-allowed-networks-src.acl
+# additional non-private networks can be added to the directory:
+#  /etc/squid-deb-proxy/allowed-networks-src.acl.d
