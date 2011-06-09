@@ -20,25 +20,29 @@ set -e
 # A simplified version of debconf's own config script.
 . /usr/share/debconf/confmodule
 
+USER_NETWORKS=/etc/squid-deb-proxy/allowed-networks-src.acl.d/10-default
+USER_ALLOWED_DESTINATIONS=/etc/squid-deb-proxy/mirror-dstdomain.acl.d/10-default
+
+DEBCONF_NETWORKS=/etc/squid-deb-proxy/allowed-networks-src.acl.d/30-debconf
+DEBCONF_ALLOWED_DESTINATIONS=/etc/squid-deb-proxy/mirror-dstdomain.acl.d/30-debconf
+
 case "$1" in
     configure)
 
         # the users allowed networks, this is not a conffile so its created
         # here
-        USER_NETWORKS=/etc/squid-deb-proxy/allowed-networks-src.acl.d/10-default
         if [ ! -f "$USER_NETWORKS" ]; then
             cat > "$USER_NETWORKS" <<EOF
 # $USER_NETWORKS
 # 
 # additional network sources that you want to allow access to the cache
 
-# all
-#0.0.0.0/0.0.0.0
+# example net
+#136.199.8.0/24
 EOF
         fi
 
         # the users allowed destinations, this is not a conffile 
-        USER_ALLOWED_DESTINATIONS=/etc/squid-deb-proxy/mirror-dstdomain.acl.d/10-default
         if [ ! -f "$USER_ALLOWED_DESTINATIONS" ]; then
             cat > "$USER_ALLOWED_DESTINATIONS" <<EOF
 # $USER_ALLOWED_DESTINATIONS
@@ -70,36 +74,42 @@ EOF
 
         # get the debconf answers
         db_get squid-deb-proxy/ppa-enable
-        if [ -f "$USER_ALLOWED_DESTINATIONS" ]; then
-            case "$RET" in
-                false)
-                    sed -i 's/^ppa.launchpad.net/#ppa.launchpad.net/' "$USER_ALLOWED_DESTINATIONS"
+        case "$RET" in
+            false)
+                rm -f "$DEBCONF_ALLOWED_DESTINATIONS"
                 ;;
-                true)
-                    sed -i 's/^#ppa.launchpad.net/ppa.launchpad.net/' "$USER_ALLOWED_DESTINATIONS"
-                    ;;
-                *)
-                    echo "db_get returned unexpected result: '$RET' for squid-deb-proxy/ppa-enable"
-                    exit 1
-                    ;;
-            esac
-        fi
+            true)
+                cat > "$DEBCONF_ALLOWED_DESTINATIONS" <<EOF
+# automatically added by debconf, please use: 
+#   sudo dpkg-reconfigure -plow squid-deb-proxy
+# to change
+ppa.launchpad.net
+EOF
+                ;;
+            *)
+                echo "db_get returned unexpected result: '$RET' for squid-deb-proxy/ppa-enable"
+                exit 1
+                ;;
+        esac
         
         db_get squid-deb-proxy/acl-disable
-        if [ -f "$USER_NETWORKS" ]; then
-            case "$RET" in
-                false)
-                    sed -i 's/^0.0.0.0\/0.0.0.0/#0.0.0.0\/0.0.0.0/' "$USER_NETWORKS" 
-                    ;;
-                true)
-                    sed -i 's/^#0.0.0.0\/0.0.0.0/0.0.0.0\/0.0.0.0/' "$USER_NETWORKS" 
-                    ;;
-                *)
-                    echo "db_get returned unexpected result: '$RET' for squid-deb-proxy/acl-disable"
-                    exit 1
-                    ;;
-            esac
-        fi
+        case "$RET" in
+            false)
+                rm -f "$DEBCONF_NETWORKS"
+                ;;
+            true)
+                cat > "$DEBCONF_NETWORKS" <<EOF
+# automatically added by debconf, please use: 
+#   sudo dpkg-reconfigure -plow squid-deb-proxy
+# to change
+0.0.0.0/0.0.0.0
+EOF
+                ;;
+            *)
+                echo "db_get returned unexpected result: '$RET' for squid-deb-proxy/acl-disable"
+                exit 1
+                ;;
+        esac
 
         invoke-rc.d squid-deb-proxy restart || true
     ;;
