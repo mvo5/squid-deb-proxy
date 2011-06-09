@@ -44,8 +44,6 @@
 #include <avahi-common/malloc.h>
 #include <avahi-common/error.h>
 
-#include <debian-installer.h>
-
 static AvahiSimplePoll *simple_poll = NULL;
 static AvahiServer *server = NULL;
 
