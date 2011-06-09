@@ -5,6 +5,7 @@ Maintainer: Michael Vogt <mvo@ubuntu.com>
 Build-Depends: debhelper (>= 7.0.50),
                gettext,
                intltool,
+               pkg-config,
                libavahi-core-dev (>= 0.6.27-2ubuntu2), 
 Standards-Version: 3.8.3
 Vcs-Bzr: https://code.launchpad.net/~squid-deb-proxy-developers/squid-deb-proxy/trunk
