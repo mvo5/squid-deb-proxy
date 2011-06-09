@@ -15,7 +15,7 @@ squid-deb-proxy (0.5) oneiric; urgency=low
   * debian/control:
     - add avahi and pkg-config to the build-depends
 
- -- Michael Vogt <michael.vogt@ubuntu.com>  Thu, 09 Jun 2011 15:18:55 +0200
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Thu, 09 Jun 2011 15:34:11 +0200
 
 squid-deb-proxy (0.4.2) natty; urgency=low
 
