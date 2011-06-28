@@ -39,7 +39,7 @@ Description: Automatic proxy discovery for apt based on avahi
 Package: squid-deb-proxy-client-udeb
 XC-Package-Type: udeb
 Section: debian-installer
-Architecture: all
+Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, configured-network,
 Description: Automatic proxy discovery for apt based on avahi (udeb)
  This package contains a helper for the apt http method to discover

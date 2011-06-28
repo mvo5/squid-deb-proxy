@@ -1,3 +1,10 @@
+squid-deb-proxy (0.5.1) oneiric; urgency=low
+
+  * debian/control:
+    - fix architecture in squid-deb-proxy-client-udeb
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Tue, 28 Jun 2011 12:35:19 +0100
+
 squid-deb-proxy (0.5) oneiric; urgency=low
 
   * merged lp:~lynxman/squid-deb-proxy/debhooks, many thanks
