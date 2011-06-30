@@ -1,2 +1,1 @@
-../../avahi/find_squid_deb_proxy ./usr/share/squid-deb-proxy-client/apt-avahi-discover
-etc/apt/apt.conf.d
+../../udeb/80squid-deb-proxy-client ./usr/lib/base-installer.d/

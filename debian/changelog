@@ -1,3 +1,10 @@
+squid-deb-proxy (0.5.2) UNRELEASED; urgency=low
+
+  * Rework/simplify/fix the udeb based on the input from 
+    Colin Watson (thanks a lot!)
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Thu, 30 Jun 2011 11:53:45 +0100
+
 squid-deb-proxy (0.5.1) oneiric; urgency=low
 
   * debian/control:

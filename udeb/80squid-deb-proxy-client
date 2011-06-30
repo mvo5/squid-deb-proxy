@@ -1,0 +1,9 @@
+#!/bin/sh -e
+# queue squid-deb-proxy-client for install early
+
+log () {
+        logger -t hw-detect "$@"
+}
+
+log "Queuing squid-deb-proxy-client"
+apt-install squid-deb-proxy-client
