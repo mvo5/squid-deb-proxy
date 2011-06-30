@@ -1,10 +1,12 @@
-squid-deb-proxy (0.5.2) UNRELEASED; urgency=low
+squid-deb-proxy (0.5.2) oneiric; urgency=low
 
   * Rework/simplify/fix the udeb based on the input from 
     Colin Watson (thanks a lot!)
-  * fix a bunch of lintian errors
+  * fix a bunch of lintian errors:
+    - add missing po-debconf as build-depends
+    - add debian/po/{POTFILES.in,templates.pot}
 
- -- Michael Vogt <michael.vogt@ubuntu.com>  Thu, 30 Jun 2011 11:53:45 +0100
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Thu, 30 Jun 2011 12:09:19 +0100
 
 squid-deb-proxy (0.5.1) oneiric; urgency=low
 
