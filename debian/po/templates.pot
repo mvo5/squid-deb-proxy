@@ -1,0 +1,48 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: squid-deb-proxy@packages.debian.org\n"
+"POT-Creation-Date: 2011-06-30 12:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: boolean
+#. Description
+#: ../squid-deb-proxy.templates:1001
+msgid "Allow PPA (Personal Package Archive) access?"
+msgstr ""
+
+#. Type: boolean
+#. Description
+#: ../squid-deb-proxy.templates:1001
+msgid ""
+"Squid-deb-proxy by default will not allow PPA repositories from launchpad. "
+"Selecting Y in this option will activate PPA repo access."
+msgstr ""
+
+#. Type: boolean
+#. Description
+#: ../squid-deb-proxy.templates:2001
+msgid "Allow unrestricted network access?"
+msgstr ""
+
+#. Type: boolean
+#. Description
+#: ../squid-deb-proxy.templates:2001
+msgid ""
+"Squid-deb-proxy restricts access to the cache to private networks only by "
+"default. Selecting Y in this option will allow unrestricted access of all "
+"IPs to access the cache. Selecting N will only allow private networks "
+"(10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16) to access the cache."
+msgstr ""

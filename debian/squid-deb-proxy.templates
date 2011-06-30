@@ -1,14 +1,14 @@
 Template: squid-deb-proxy/ppa-enable
 Type: boolean
 Default: false
-Description: Allow PPA (Personal Package Archive) access
+_Description: Allow PPA (Personal Package Archive) access?
  Squid-deb-proxy by default will not allow PPA repositories from launchpad.
  Selecting Y in this option will activate PPA repo access.
 
 Template: squid-deb-proxy/acl-disable
 Type: boolean
 Default: false
-Description: Allow unrestricted network access
+_Description: Allow unrestricted network access?
  Squid-deb-proxy restricts access to the cache to private networks
  only by default.
  Selecting Y in this option will allow unrestricted access of all IPs
