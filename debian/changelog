@@ -1,8 +1,8 @@
-squid-deb-proxy (0.6) UNRELEASED; urgency=low
+squid-deb-proxy (0.6) precise; urgency=low
 
   * add (optional) support for squid3
 
- -- Michael Vogt <michael.vogt@ubuntu.com>  Tue, 01 Nov 2011 12:58:33 -0400
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Thu, 03 Nov 2011 10:44:06 -0400
 
 squid-deb-proxy (0.5.2) oneiric; urgency=low
 
