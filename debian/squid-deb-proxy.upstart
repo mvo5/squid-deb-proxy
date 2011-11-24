@@ -35,7 +35,6 @@ EOF
       echo "No squid binary found"
       exit 1
   fi
-  export SQUID
 
   # ensure all cache dirs are there
   install -d -o proxy -g proxy -m 750 /var/cache/squid-deb-proxy/
@@ -93,4 +92,14 @@ end script
 start on (local-filesystems and net-device-up IFACE!=lo)
 stop on runlevel [!2345]
 
-exec $SQUID -N -f /etc/squid-deb-proxy/squid-deb-proxy.conf
+script
+  if [ -x /usr/sbin/squid ]; then
+      SQUID=/usr/sbin/squid
+  elif  [ -x /usr/sbin/squid3 ]; then
+      SQUID=/usr/sbin/squid3
+  else
+      echo "No squid binary found"
+      exit 1
+  fi
+  exec $SQUID -N -f /etc/squid-deb-proxy/squid-deb-proxy.conf
+end script
