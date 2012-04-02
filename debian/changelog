@@ -1,4 +1,4 @@
-squid-deb-proxy (0.6.2) UNRELEASEDprecise; urgency=low
+squid-deb-proxy (0.6.2) precise; urgency=low
 
   [ Michael Vogt ]
   * squid-deb-proxy.conf:
@@ -9,7 +9,7 @@ squid-deb-proxy (0.6.2) UNRELEASEDprecise; urgency=low
   * squid-deb-proxy.conf: always refresh Packages and Release files.
     (LP: #952364)
 
- -- Michael Vogt <michael.vogt@ubuntu.com>  Mon, 02 Apr 2012 22:00:12 +0200
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Mon, 02 Apr 2012 22:09:12 +0200
 
 squid-deb-proxy (0.6.1) precise; urgency=low
 
