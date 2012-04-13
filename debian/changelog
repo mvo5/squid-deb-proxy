@@ -4,6 +4,8 @@ squid-deb-proxy (0.6.2) precise; urgency=low
   * squid-deb-proxy.conf:
     - use "aufs" instead of "ufs" for the cache directory. Thanks
       to Robert Colins for this suggestion
+  * mirror-dstdomain.acl:
+    - fix typo, thanks to Paolo Rotolo (LP: #978696)
 
   [ Robie Basak ]
   * squid-deb-proxy.conf: always refresh Packages and Release files.

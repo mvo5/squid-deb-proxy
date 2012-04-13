@@ -18,4 +18,4 @@ extras.ubuntu.com
 changelogs.ubuntu.com
 
 # additional destinations can be added to the directory:
-#  /etc/squid-deb-proxy/mirror-destdomain.acl.d
+#  /etc/squid-deb-proxy/mirror-dstdomain.acl.d
