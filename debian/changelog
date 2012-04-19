@@ -1,4 +1,4 @@
-squid-deb-proxy (0.6.3) UNRELEASEDprecise-proposed; urgency=low
+squid-deb-proxy (0.6.3) precise-proposed; urgency=low
 
   [ Simon Déziel ]
   * Support squid and squid3 in logrotate config (LP: #984806)
@@ -7,7 +7,7 @@ squid-deb-proxy (0.6.3) UNRELEASEDprecise-proposed; urgency=low
   * mirror-dstdomain.acl:
     - fix typo, thanks to Paolo Rotolo (LP: #978696)
   
- -- Michael Vogt <michael.vogt@ubuntu.com>  Thu, 19 Apr 2012 14:44:54 +0200
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Thu, 19 Apr 2012 14:46:24 +0200
 
 squid-deb-proxy (0.6.2) precise; urgency=low
 
