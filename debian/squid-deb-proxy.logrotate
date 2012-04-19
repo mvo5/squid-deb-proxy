@@ -10,6 +10,15 @@
  nocreate
  sharedscripts
  postrotate
-  test ! -e /var/run/squid-deb-proxy.pid || /usr/sbin/squid -f /etc/squid-deb-proxy/squid-deb-proxy.conf -k rotate
+  if [ -x /usr/sbin/squid ]; then
+      SQUID=/usr/sbin/squid
+  elif  [ -x /usr/sbin/squid3 ]; then
+      SQUID=/usr/sbin/squid3
+  else
+      echo "No squid binary found"
+      exit 1
+  fi
+
+  test ! -e /var/run/squid-deb-proxy.pid || $SQUID -f /etc/squid-deb-proxy/squid-deb-proxy.conf -k rotate
  endscript
 }
