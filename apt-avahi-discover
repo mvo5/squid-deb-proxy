@@ -5,8 +5,29 @@
 
 SERVICE="_apt_proxy._tcp"
 
-out=$(avahi-browse -kprt $SERVICE|grep '^=;.*;IPv4;.*'|head -n1)
-PORT=$(echo "$out" | cut -d ';' -f9)
-HOST=$(echo "$out" | cut -d ';' -f7)
-IP=$(avahi-resolve -n4 "$HOST" | cut -f2)
-echo "http://$IP:$PORT/"
+all=$(avahi-browse -kprt $SERVICE|grep "^=;")
+# Prefer IPv6 addresses (a:b:...:z) over IPv4 addresses (a.b.c.d).
+# NOTE: the IPvN field in the record tells us which protocol over which
+#       the record was returned _not_ the address format of the record.
+for addrform in '*:*' '*.*'
+do
+	for out in $all
+	do
+		# Reject addresses not matching the required form.
+		IP=$(echo "$out" | cut -d ';' -f8)
+		case "$IP" in
+		$addrform)	;;
+		*)		continue ;;
+		esac
+
+		PORT=$(echo "$out" | cut -d ';' -f9)
+
+		# IPv6 addresses need to be emitted with surrounding [].
+		case "$IP" in
+		*:*)	IP="[$IP]" ;;
+		esac
+
+		echo "http://$IP:$PORT/"
+		break 2
+	done
+done
