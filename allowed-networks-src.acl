@@ -8,5 +8,8 @@
 192.168.0.0/16
 127.0.0.1
 
+# IPv6 private addresses
+fe80::/64
+
 # additional non-private networks can be added to the directory:
 #  /etc/squid-deb-proxy/allowed-networks-src.acl.d

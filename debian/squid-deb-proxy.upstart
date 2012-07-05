@@ -71,6 +71,10 @@ post-start script
 <!DOCTYPE service-group SYSTEM "avahi-service.dtd">
 <service-group>
 	<name replace-wildcards="yes">Squid deb proxy on %h</name>
+	<service protocol="ipv6">
+		<type>_apt_proxy._tcp</type>
+		<port>$PORT</port>
+	</service>
 	<service protocol="ipv4">
 		<type>_apt_proxy._tcp</type>
 		<port>$PORT</port>

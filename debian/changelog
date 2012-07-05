@@ -1,3 +1,12 @@
+squid-deb-proxy (0.6.4) UNRELEASED; urgency=low
+
+  [ Andy Whitcroft ]
+  * squid-deb-proxy: advertise on IPv6 (LP: #1021298)
+   - add IPv6 stanza to avahi configuration
+   - add IPv6 link local addresses to default acls
+
+ -- Andy Whitcroft <apw@canonical.com>  Thu, 05 Jul 2012 12:22:16 +0100
+
 squid-deb-proxy (0.6.3) precise-proposed; urgency=low
 
   [ Simon Déziel ]
