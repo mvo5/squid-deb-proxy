@@ -1,33 +1,50 @@
-#!/bin/sh
+#!/usr/bin/python
 #
 # use avahi to find a _apt_proxy._tcp provider and return
 # a http proxy string suitable for apt
 
-SERVICE="_apt_proxy._tcp"
+import os
+import sys
+import socket
+from subprocess		import Popen, PIPE
 
-all=$(avahi-browse -kprt $SERVICE|grep "^=;")
-# Prefer IPv6 addresses (a:b:...:z) over IPv4 addresses (a.b.c.d).
-# NOTE: the IPvN field in the record tells us which protocol over which
-#       the record was returned _not_ the address format of the record.
-for addrform in '*:*' '*.*'
-do
-	for out in $all
-	do
-		# Reject addresses not matching the required form.
-		IP=$(echo "$out" | cut -d ';' -f8)
-		case "$IP" in
-		$addrform)	;;
-		*)		continue ;;
-		esac
 
-		PORT=$(echo "$out" | cut -d ';' -f9)
+# Obtain all of the services addresses from avahi, pulling the IPv6 addresses
+# to the top.
+def is_ipv6(a):
+    return a.find(':') >= 0
 
-		# IPv6 addresses need to be emitted with surrounding [].
-		case "$IP" in
-		*:*)	IP="[$IP]" ;;
-		esac
+service = '_apt_proxy._tcp'
+p = Popen(['avahi-browse', '-kprt', service], stdout=PIPE)
+addr4 = []
+addr6 = []
+for line in p.stdout:
+    if line[0] == '=':
+        bits = line.split(';')
+        if is_ipv6(bits[7]):
+            addr6.append([bits[7], bits[8]])
+        else:
+            addr4.append([bits[7], bits[8]])
 
-		echo "http://$IP:$PORT/"
-		break 2
-	done
-done
+addrs = addr6 + addr4
+
+# Run through the offered addresses and see if we we have a bound local
+# address for it.
+address = None
+for addr in addrs:
+    (ip, port) = addr
+
+    try:
+        res = socket.getaddrinfo(ip, port, 0, 0, 0, socket.AI_ADDRCONFIG)
+        address = addr
+        break
+    except socket.gaierror:
+        pass
+
+# Dump the approved address out in an appropriate format.
+if address:
+    (ip, port) = address
+    if is_ipv6(ip):
+        print "http://[%s]:%s/" % (ip, port)
+    else:
+        print "http://%s:%s/" % (ip, port)
