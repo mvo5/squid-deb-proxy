@@ -1,4 +1,4 @@
-squid-deb-proxy (0.6.4) UNRELEASED; urgency=low
+squid-deb-proxy (0.6.4) quantal; urgency=low
 
   [ Andy Whitcroft ]
   * squid-deb-proxy: advertise on IPv6 (LP: #1021298)
@@ -13,7 +13,7 @@ squid-deb-proxy (0.6.4) UNRELEASED; urgency=low
      use address form itself
    - format IPv6 addresses using the http://[address]:port/ form
 
- -- Andy Whitcroft <apw@canonical.com>  Thu, 05 Jul 2012 12:22:16 +0100
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Mon, 09 Jul 2012 17:43:11 +0200
 
 squid-deb-proxy (0.6.3) precise-proposed; urgency=low
 
