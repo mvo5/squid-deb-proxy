@@ -1,3 +1,16 @@
+squid-deb-proxy (0.6.5) quantal; urgency=low
+
+  [ Simon Déziel ]
+  * lp:~sdeziel/squid-deb-proxy/remove-unused-acls:
+    - remove all and localhost acls as they are buildin in squid3
+      (LP: #1005257)
+  
+  [ Michael Vogt ]
+  * debian/control:
+    - only depend on squid3
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Fri, 24 Aug 2012 17:15:16 +0200
+
 squid-deb-proxy (0.6.4) quantal; urgency=low
 
   [ Andy Whitcroft ]
