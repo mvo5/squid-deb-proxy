@@ -49,6 +49,10 @@ EOF
   concat_file_from_dir "$PKG_BLACKLIST_DIR" "$PKG_BLACKLIST"
   # postprocess for regexp format
   sed -i -r '/^#/d;/^$/d;s#(.*)#\/\1_.*\.deb$#g' $PKG_BLACKLIST
+  # if the file is empty remove it
+  if [ ! -s $PKG_BLACKLIST ]; then
+    rm $PKG_BLACKLIST
+  fi
 
   # generate mirror file
   MIRROR_DESTDOMAIN_DIR=/etc/squid-deb-proxy/mirror-dstdomain.acl.d
