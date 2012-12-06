@@ -1,10 +1,11 @@
-squid-deb-proxy (0.6.7) UNRELEASED; urgency=low
+squid-deb-proxy (0.6.7) raring; urgency=low
 
   * lp:~nobuto/squid-deb-proxy/allow-ubuntu-cloud-archive:
-    - This is a request for allowing to cache the "Ubuntu Cloud Archive" 
-      repository by default.
+    - allowing caching of the "Ubuntu Cloud Archive" repository by 
+      default
+  * allow caching of .extras.ubuntu.com
 
- -- Michael Vogt <michael.vogt@ubuntu.com>  Thu, 06 Dec 2012 11:27:26 +0100
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Thu, 06 Dec 2012 11:47:25 +0100
 
 squid-deb-proxy (0.6.6) quantal; urgency=low
 
