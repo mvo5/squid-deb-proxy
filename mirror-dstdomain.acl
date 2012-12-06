@@ -11,7 +11,7 @@ mirrors.ubuntu.com
 
 #official third party repositories
 .archive.canonical.com
-extras.ubuntu.com
+.extras.ubuntu.com
 
 # default changelogs location, this includes changelogs and the meta-release
 # file that has information about new ubuntu versions
