@@ -1,1 +1,2 @@
 etc/squid-deb-proxy
+init-common.sh usr/share/squid-deb-proxy/

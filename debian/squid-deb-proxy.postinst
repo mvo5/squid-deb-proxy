@@ -110,6 +110,8 @@ EOF
                 exit 1
                 ;;
         esac
+        # workaround for bugginess
+        db_stop
 
         invoke-rc.d squid-deb-proxy restart || true
     ;;

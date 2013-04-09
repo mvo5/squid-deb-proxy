@@ -1,3 +1,12 @@
+squid-deb-proxy (0.7) UNRELEASED; urgency=low
+
+  * add a debian default config
+  * enable sysv init script
+  * refactor shell helper code into init-common.sh
+  * initial debian upload (closes: #574081)
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Tue, 09 Apr 2013 11:04:53 +0200
+
 squid-deb-proxy (0.6.8) raring; urgency=low
 
   * apt-avahi-discover:
