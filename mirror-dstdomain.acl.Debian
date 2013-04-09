@@ -4,9 +4,12 @@
 
 # default mirrors
 ftp.debian.org 
-http.debian.org 
 security.debian.org
-ftp.*.debian.org 
+
+# the default mirror names on debian are ftp[0-9]*\.[a-z]+\.debian\.org
+# but that would require (slow) regexp matching, so for now we allow
+# www.debian.org and friends here too
+.debian.org 
 
 # additional destinations can be added to the directory:
 #  /etc/squid-deb-proxy/mirror-dstdomain.acl.d
