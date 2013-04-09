@@ -27,9 +27,11 @@ def get_proxy_host_port_from_avahi():
             tokens = line.split(';')
             addr = tokens[7]
             port = tokens[8]
-            # We need to skip link-local addresses since APT can't use them
-            if is_ipv6(addr) and not is_linklocal(addr):
-                addr6.append((addr, port))
+            if is_ipv6(addr):
+                # We need to skip ipv6 link-local addresses since 
+                # APT can't use them
+                if not is_linklocal(addr):
+                    addr6.append((addr, port))
             else:
                 addr4.append((addr, port))
 
