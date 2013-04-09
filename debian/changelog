@@ -1,9 +1,9 @@
-squid-deb-proxy (0.6.8) UNRELEASED; urgency=low
+squid-deb-proxy (0.6.8) raring; urgency=low
 
   * apt-avahi-discover:
-    - skip ipv6 link-local addresses, thanks to "Edwin"
+    - skip ipv6 link-local addresses, thanks to Edwin Amsler
 
- -- Michael Vogt <michael.vogt@ubuntu.com>  Tue, 09 Apr 2013 11:41:03 +0200
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Tue, 09 Apr 2013 18:50:45 +0200
 
 squid-deb-proxy (0.6.7) raring; urgency=low
 
