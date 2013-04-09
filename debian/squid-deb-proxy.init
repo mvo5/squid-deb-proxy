@@ -58,7 +58,7 @@ stop () {
 	PID=`cat $PIDFILE 2>/dev/null`
 	start-stop-daemon --stop --quiet \
 		--pidfile $PIDFILE \
-		--exec $DAEMON -- -f $CONFIG
+		--exec $DAEMON
 
         # cleanup
         post_stop
