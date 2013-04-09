@@ -1,13 +1,13 @@
 Source: squid-deb-proxy
 Section: net
 Priority: extra
-Maintainer: Michael Vogt <mvo@ubuntu.com>
+Maintainer: Michael Vogt <mvo@debian.org>
 Build-Depends: debhelper (>= 7.0.50),
                gettext,
                intltool,
                pkg-config,
                po-debconf
-Standards-Version: 3.8.3
+Standards-Version: 3.9.4
 Vcs-Bzr: https://code.launchpad.net/~squid-deb-proxy-developers/squid-deb-proxy/trunk
 Homepage: https://launchpad.net/squid-deb-proxy
 
@@ -27,7 +27,7 @@ Description: Squid proxy configuration optimized for deb packages
 
 Package: squid-deb-proxy-client
 Architecture: all
-Depends: ${misc:Depends}, avahi-utils, apt (>= 0.7.25.3ubuntu1)
+Depends: ${misc:Depends}, avahi-utils, apt (>= 0.7.25.3ubuntu1), python
 Description: Automatic proxy discovery for apt based on avahi
  This package contains a helper for the apt http method to discover
  proxies that publish their service as _apt_proxy._tcp.
