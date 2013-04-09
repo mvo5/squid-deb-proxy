@@ -79,6 +79,8 @@ post_start() {
 	</service>
 </service-group>
 EOF
+  # ensure proper permissions
+  chmod 0644 $AVAHIFILE
   fi
 }
 
