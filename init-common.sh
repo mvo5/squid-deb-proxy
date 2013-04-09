@@ -1,4 +1,4 @@
- AVAHIFILE=/etc/avahi/services/squid-deb-proxy.service
+AVAHIFILE=/etc/avahi/services/squid-deb-proxy.service
 
 concat_file_from_dir() {
       # the .d directory
@@ -82,9 +82,22 @@ EOF
   fi
 }
 
-pre_stop() {
+post_stop() {
   if [ -f $AVAHIFILE ]
   then
   	rm $AVAHIFILE
   fi
 }
+
+# from the squid3 debian init script
+find_cache_dir () {
+        w="     " # space tab
+        res=`sed -ne '
+                s/^'$1'['"$w"']\+[^'"$w"']\+['"$w"']\+\([^'"$w"']\+\).*$/\1/p;
+                t end;
+                d;
+                :end q' < $CONFIG`
+        [ -n "$res" ] || res=$2
+        echo "$res"
+}
+

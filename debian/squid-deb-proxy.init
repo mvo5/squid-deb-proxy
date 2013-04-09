@@ -37,6 +37,7 @@ PATH=/bin:/usr/bin:/sbin:/usr/sbin
 ulimit -n 65535
 
 start () {
+        cache_dir=`find_cache_dir cache_dir`
         pre_start
 
 	umask 027
@@ -111,8 +112,7 @@ case "$1" in
 	log_action_msg "Reloading $DESC configuration files"
 	remove_avahi_service
 	start-stop-daemon --stop --signal 1 --quiet \
-		--pidfile $PIDFILE \
-    --exec $DAEMON -- -f $CONFIG
+		--pidfile $PIDFILE --exec $DAEMON -- -f $CONFIG
 	log_action_end_msg 0
 	write_avahi_service
 	;;
