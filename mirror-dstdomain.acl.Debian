@@ -1,0 +1,12 @@
+# mirror-dstdomain.conf
+# 
+# network destinations that are allowed by this cache
+
+# default mirrors
+ftp.debian.org 
+http.debian.org 
+security.debian.org
+ftp.*.debian.org 
+
+# additional destinations can be added to the directory:
+#  /etc/squid-deb-proxy/mirror-dstdomain.acl.d
