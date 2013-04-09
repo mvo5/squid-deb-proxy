@@ -27,69 +27,18 @@ SQUID_ARGS="-YC -f $CONFIG"
 
 . /lib/lsb/init-functions
 
+# get the common stuff
+. /usr/share/squid-deb-proxy/init-common.sh
+
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 
 [ -x $DAEMON ] || exit 0
 
 ulimit -n 65535
 
-find_cache_dir () {
-        w="     " # space tab
-        res=`sed -ne '
-                s/^'$1'['"$w"']\+[^'"$w"']\+['"$w"']\+\([^'"$w"']\+\).*$/\1/p;
-                t end;
-                d;
-                :end q' < $CONFIG`
-        [ -n "$res" ] || res=$2
-        echo "$res"
-}
-
-find_cache_port () {
-	w="   " # space tab
-	res=`sed -ne '
-		s/^'$1'['"$w"']\+\([^'"$w"']\+\).*$/\1/p;
-		t end;
-		d;
-		:end q' < $CONFIG`
-	[ -n "$res" ] || res=$2
-	echo "$res"
-}
-
-write_avahi_service () {
-	port=`find_cache_port http_port 8000`
-	cat > $AVAHIFILE << EOF
-<?xml version="1.0" standalone='no'?>
-<!DOCTYPE service-group SYSTEM "avahi-service.dtd">
-<service-group>
-	<name replace-wildcards="yes">Squid deb proxy on %h</name>
-	<service protocol="ipv4">
-		<type>_apt_proxy._tcp</type>
-		<port>$port</port>
-	</service>
-</service-group>
-EOF
-}
-
-remove_avahi_service () {
-	if [ -f $AVAHIFILE ]
-	then
-		rm $AVAHIFILE
-	fi
-}
-
 start () {
-	cache_dir=`find_cache_dir cache_dir /var/spool/squid-deb-proxy`
+        pre_start
 
-	#
-	# Create spool dirs if they don't exist.
-	#
-	if [ -d "$cache_dir" -a ! -d "$cache_dir/00" ]
-	then
-		log_warning_msg "Creating $DESC cache structure"
-		$DAEMON -f $CONFIG -z
-	fi
-
-	write_avahi_service
 	umask 027
 	ulimit -n 65535
 	cd $cache_dir
@@ -99,17 +48,20 @@ start () {
 	status=$?
 	if [ $status -eq 0 ]
 	then
-		write_avahi_service
+	        post_start
 	fi 
 	return $status
 }
 
 stop () {
-	remove_avahi_service
 	PID=`cat $PIDFILE 2>/dev/null`
 	start-stop-daemon --stop --quiet \
 		--pidfile $PIDFILE \
 		--exec $DAEMON -- -f $CONFIG
+
+        # cleanup
+        post_stop
+
 	#
 	#	Now we have to wait until squid has _really_ stopped.
 	#

@@ -10,7 +10,6 @@ override_dh_auto_build:
 	# use hte right default mirrors file for the distro
 	ln -s mirror-dstdomain.acl.$(DIST) mirror-dstdomain.acl
 
-
 override_dh_installinit:
 	dh_installinit $@
 	dh_installinit --name=squid-deb-proxy-avahi
