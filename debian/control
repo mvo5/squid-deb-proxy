@@ -23,7 +23,7 @@ Description: Squid proxy configuration optimized for deb packages
  directory and port than the regular squid cache.
  .
  The config default to allowing cached access from a local network
- to *.archive.ubuntu.com.
+ to the archive server.
 
 Package: squid-deb-proxy-client
 Architecture: all

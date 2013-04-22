@@ -1,3 +1,10 @@
+squid-deb-proxy (0.7.1) UNRELEASED; urgency=low
+
+  * fix package description, thanks to  martin f krafft
+    (closes: #705813)
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Mon, 22 Apr 2013 06:32:14 +0200
+
 squid-deb-proxy (0.7) unstable; urgency=low
 
   * add a debian default config
