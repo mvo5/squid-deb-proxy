@@ -18,19 +18,16 @@ Depends: ${python:Depends},
          ${misc:Depends},
 	 squid3
 Recommends: avahi-utils
-Description: Squid proxy configuration optimized for deb packages
- This package contains a squid proxy configuration that is optimized
- for downloading deb packages. It defaults to a different cache 
- directory and port than the regular squid cache.
- .
- The config default to allowing cached access from a local network
- to the archive server.
+Description: Squid proxy configuration to optimize package downloads
+ This package contains a Squid proxy configuration to manage a cache of
+ .deb downloads, with optimizations for the types of file present in
+ package repositories, and using a dedicated directory and port.
 
 Package: squid-deb-proxy-client
 Architecture: all
 Depends: ${misc:Depends}, avahi-utils, apt (>= 0.7.25.3ubuntu1), python
-Description: Automatic proxy discovery for apt based on avahi
- This package contains a helper for the apt http method to discover
+Description: automatic proxy discovery for APT based on Avahi
+ This package contains a helper for the APT http method to discover
  proxies that publish their service as _apt_proxy._tcp.
  .
  It was written to be installed on clients that should use 
@@ -42,12 +39,12 @@ XC-Package-Type: udeb
 Section: debian-installer
 Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends}, configured-network,
-Description: Automatic proxy discovery for apt based on avahi (udeb)
- This package contains a helper for the apt http method to discover
+Description: automatic proxy discovery for APT based on Avahi (udeb)
+ This package contains a helper for the APT http method to discover
  proxies that publish their service as _apt_proxy._tcp.
  .
  It was written to be installed on clients that should use 
  squid-deb-proxy automatically, but it will work with any proxy
  that publishes the service as _apt_proxy._tcp.
  .
- This package contains the udeb only
+ This package contains the udeb for use with the Debian Installer.

@@ -1,16 +1,26 @@
+# These templates have been reviewed by the debian-l10n-english
+# team
+#
+# If modifications/additions/rewording are needed, please ask
+# debian-l10n-english@lists.debian.org for advice.
+#
+# Even minor modifications require translation updates and such
+# changes should be coordinated with translators and reviewers.
+
 Template: squid-deb-proxy/ppa-enable
 Type: boolean
 Default: false
-_Description: Allow PPA (Personal Package Archive) access?
- Squid-deb-proxy by default will not allow PPA repositories from launchpad.
- Selecting Y in this option will activate PPA repo access.
+_Description: Allow PPA access?
+ By default, squid-deb-proxy does not allow access to Personal Package
+ Archive (PPA) repositories on Launchpad.
+ .
+ Choosing this option will whitelist these repositories.
 
 Template: squid-deb-proxy/acl-disable
 Type: boolean
 Default: false
 _Description: Allow unrestricted network access?
- Squid-deb-proxy restricts access to the cache to private networks
- only by default.
- Selecting Y in this option will allow unrestricted access of all IPs
- to access the cache. Selecting N will only allow private networks
- (10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16) to access the cache.
+ By default, squid-deb-proxy allows access to the cache from private
+ networks only (10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16).
+ .
+ Choosing this option will allow other IP addresses to access the cache.
