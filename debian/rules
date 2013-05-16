@@ -1,6 +1,6 @@
 #!/usr/bin/make -f
 
-DIST=$(shell lsb_release -i -s)
+DIST=$(shell dpkg-vendor --query Vendor)
 
 %:
 	dh $@

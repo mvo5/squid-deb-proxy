@@ -6,7 +6,6 @@ Build-Depends: debhelper (>= 7.0.50),
                gettext,
                intltool,
                pkg-config,
-               lsb-release,
                po-debconf
 Standards-Version: 3.9.4
 Vcs-Bzr: https://code.launchpad.net/~squid-deb-proxy-developers/squid-deb-proxy/trunk
