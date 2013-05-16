@@ -2,7 +2,7 @@ squid-deb-proxy (0.7.1) UNRELEASED; urgency=low
 
   * fix package description, thanks to  martin f krafft
     (closes: #705813)
-  * add lsb-release to the build-depends, closes: #707507
+  * add lsb-release to the build-depends, closes: #707507, #706521
   * merge reviewed package description and debconf templates, many
     thanks to Christian PERRIER and Justin B Rye (closes: #705794)
   
