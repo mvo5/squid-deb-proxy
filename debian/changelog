@@ -8,7 +8,9 @@ squid-deb-proxy (0.7.1) UNRELEASED; urgency=low
   * merge patch to use dpkg-vendor instead of lsb_release -i -s
     thanks to  Felix Geyer (closes: #706521)
   * debian/po/sk.po:
-    - updated, thanks to helix84 (closes: #709109)
+    - add, thanks to helix84 (closes: #709109)
+  * debian/po/da.po:
+    - added, thanks to Joe Dalton (closes: #708854)
   
  -- Michael Vogt <michael.vogt@ubuntu.com>  Mon, 22 Apr 2013 06:32:14 +0200
 
