@@ -1,0 +1,66 @@
+# German debconf translation of squid-deb-proxy.
+# Copyright (C) 2010 Canonical.
+# This file is distributed under the same license as
+# the squid-deb-proxy package.
+# Chris Leick <c.leick@vollbio.de>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: squid-deb-proxy 0.8\n"
+"Report-Msgid-Bugs-To: squid-deb-proxy@packages.debian.org\n"
+"POT-Creation-Date: 2013-05-17 09:43+0200\n"
+"PO-Revision-Date: 2013-05-19 10:48+0100\n"
+"Last-Translator: Chris Leick <c.leick@vollbio.de>\n"
+"Language-Team: German <debian-l10n-german@lists.debian.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: boolean
+#. Description
+#: ../squid-deb-proxy.templates:2001
+msgid "Allow PPA access?"
+msgstr "PPA-Zugriff erlauben?"
+
+#. Type: boolean
+#. Description
+#: ../squid-deb-proxy.templates:2001
+msgid ""
+"By default, squid-deb-proxy does not allow access to Personal Package "
+"Archive (PPA) repositories on Launchpad."
+msgstr ""
+"Standardmäßig erlaubt Squid-deb-proxy keinen Zugriff auf persönliche "
+"Paketarchivdepots (Personal Package Archive/PPA) auf Launchpad."
+
+#. Type: boolean
+#. Description
+#: ../squid-deb-proxy.templates:2001
+msgid "Choosing this option will whitelist these repositories."
+msgstr ""
+"Die Auswahl dieser Option wird diese Depots auf eine Liste erlaubter Depots "
+"setzen."
+
+#. Type: boolean
+#. Description
+#: ../squid-deb-proxy.templates:3001
+msgid "Allow unrestricted network access?"
+msgstr "Uneingeschränkten Netzwerkzugriff gestatten?"
+
+#. Type: boolean
+#. Description
+#: ../squid-deb-proxy.templates:3001
+msgid ""
+"By default, squid-deb-proxy allows access to the cache from private networks "
+"only (10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16)."
+msgstr ""
+"Standardmäßig erlaubt Squid-deb-proxy nur privaten Netzwerken (10.0.0.0/8, "
+"172.16.0.0/12, 192.168.0.0/16) den Zugriff auf den Zwischenspeicher."
+
+#. Type: boolean
+#. Description
+#: ../squid-deb-proxy.templates:3001
+msgid "Choosing this option will allow other IP addresses to access the cache."
+msgstr ""
+"Die Auswahl dieser Option wird weiteren IP-Adressen den Zugriff auf den "
+"Zwischenspeicher gestatten."

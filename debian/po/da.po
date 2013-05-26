@@ -1,0 +1,63 @@
+# Danish translation squid-deb-proxy.
+# Copyright (C) 2013 squid-deb-proxy og nedenstående oversættere.
+# This file is distributed under the same license as the squid-deb-proxy package.
+# Joe Hansen <joedalton2@yahoo.dk>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: squid-deb-proxy\n"
+"Report-Msgid-Bugs-To: squid-deb-proxy@packages.debian.org\n"
+"POT-Creation-Date: 2013-05-17 09:43+0200\n"
+"PO-Revision-Date: 2013-05-19 10:43+0100\n"
+"Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
+"Language-Team: Danish <debian-l10n-danish@lists.debian.org>\n"
+"Language: da\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: boolean
+#. Description
+#: ../squid-deb-proxy.templates:2001
+msgid "Allow PPA access?"
+msgstr "Tillad PPA-adgang?"
+
+#. Type: boolean
+#. Description
+#: ../squid-deb-proxy.templates:2001
+msgid ""
+"By default, squid-deb-proxy does not allow access to Personal Package "
+"Archive (PPA) repositories on Launchpad."
+msgstr ""
+"Som standard giver squid-deb-proxy ikke adgang til Personal Package "
+"Archive-arkiver (PPA) på Launchpad."
+
+#. Type: boolean
+#. Description
+#: ../squid-deb-proxy.templates:2001
+msgid "Choosing this option will whitelist these repositories."
+msgstr "Valg af denne indstilling vil hvidliste disse arkiver."
+
+#. Type: boolean
+#. Description
+#: ../squid-deb-proxy.templates:3001
+msgid "Allow unrestricted network access?"
+msgstr "Tillad ubegrænset netværksadgang?"
+
+#. Type: boolean
+#. Description
+#: ../squid-deb-proxy.templates:3001
+msgid ""
+"By default, squid-deb-proxy allows access to the cache from private networks "
+"only (10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16)."
+msgstr ""
+"Som standard giver squid-deb-proxy kun adgang til mellemlageret (cache) fra "
+"private netværk (10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16)."
+
+#. Type: boolean
+#. Description
+#: ../squid-deb-proxy.templates:3001
+msgid "Choosing this option will allow other IP addresses to access the cache."
+msgstr ""
+"Valg af denne indstilling vil give andre IP-adresser adgang til mellemlageret (cache)."
+

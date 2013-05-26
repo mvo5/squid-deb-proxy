@@ -13,6 +13,8 @@ squid-deb-proxy (0.7.1) UNRELEASED; urgency=low
     - added, thanks to Joe Dalton (closes: #708854)
   * debian/po/ru.po:
     - added, thanks to Yuri Kozlov (closes: #708728)
+  * debian/po/de.po:
+    - added, thanks to Chris Leick (closes: #709630)
   
  -- Michael Vogt <michael.vogt@ubuntu.com>  Mon, 22 Apr 2013 06:32:14 +0200
 

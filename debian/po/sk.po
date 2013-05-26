@@ -1,0 +1,64 @@
+# Slovak translation of squid-deb-proxy debconf template.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the squid-deb-proxy package.
+# Ivan Masár <helix84@centrum.sk>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: squid-deb-proxy\n"
+"Report-Msgid-Bugs-To: squid-deb-proxy@packages.debian.org\n"
+"POT-Creation-Date: 2013-05-17 09:43+0200\n"
+"PO-Revision-Date: 2013-05-20 23:40+0200\n"
+"Last-Translator: Ivan Masár <helix84@centrum.sk>\n"
+"Language-Team: Slovak <debian-l10n-slovak@lists.debian.org>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: boolean
+#. Description
+#: ../squid-deb-proxy.templates:2001
+msgid "Allow PPA access?"
+msgstr "Povoliť prístup k PPA?"
+
+#. Type: boolean
+#. Description
+#: ../squid-deb-proxy.templates:2001
+msgid ""
+"By default, squid-deb-proxy does not allow access to Personal Package "
+"Archive (PPA) repositories on Launchpad."
+msgstr ""
+"V predvolenom nastavení squid-deb-proxy neumožňuje prístup k Osobným "
+"archívom balíkov (PPA) na Launchpade."
+
+#. Type: boolean
+#. Description
+#: ../squid-deb-proxy.templates:2001
+msgid "Choosing this option will whitelist these repositories."
+msgstr ""
+"Ak zvolíte túto možnosť, bude tieto zdroje softvéru sa pridajú na bielu "
+"listinu."
+
+#. Type: boolean
+#. Description
+#: ../squid-deb-proxy.templates:3001
+msgid "Allow unrestricted network access?"
+msgstr "Umožniť neobmedzený prístup k sieti?"
+
+#. Type: boolean
+#. Description
+#: ../squid-deb-proxy.templates:3001
+msgid ""
+"By default, squid-deb-proxy allows access to the cache from private networks "
+"only (10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16)."
+msgstr ""
+"V predvolenom nastavení squid-deb-proxy umožňuje prístup do vyrovnávacej "
+"pamäte len zo súkromných sietí (10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16)."
+
+#. Type: boolean
+#. Description
+#: ../squid-deb-proxy.templates:3001
+msgid "Choosing this option will allow other IP addresses to access the cache."
+msgstr ""
+"Ak zvolíte túto možnosť, umožníte prístup k vyrovnávacej pamäti aj ďalším IP "
+"adresám."
