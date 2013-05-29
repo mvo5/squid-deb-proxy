@@ -17,6 +17,9 @@ squid-deb-proxy (0.7.1) UNRELEASED; urgency=low
     - added, thanks to Chris Leick (closes: #709630)
   * debian/po/it.po:
     - added, thanks to Beatrice Torracca (closes: #709881)
+  * debian/po/cs.po:
+    - added, thanks to Michal Šimůnek  (closes: #710114)
+  
   
  -- Michael Vogt <michael.vogt@ubuntu.com>  Mon, 22 Apr 2013 06:32:14 +0200
 
