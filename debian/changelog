@@ -21,7 +21,8 @@ squid-deb-proxy (0.7.1) UNRELEASED; urgency=low
     - added, thanks to Michal Šimůnek  (closes: #710114)
   * debian/po/pl.po:
     - added, thanks to Michał Kułach  (closes: #710389)
-  
+  * debian/po/ja.po:
+    - added, thanks to "victory" (closes: #710436)
   
  -- Michael Vogt <michael.vogt@ubuntu.com>  Mon, 22 Apr 2013 06:32:14 +0200
 
