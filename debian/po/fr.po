@@ -1,0 +1,66 @@
+# translation to French of squid-deb-proxy templates
+# Copyright (C) 2013 French l10n team <debian-l10n-french@lists.debian.org>
+# This file is distributed under the same license as the squid-deb-proxy package.
+# jipege <jean-pierregiraud@neuf.fr>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: squid-deb-proxy\n"
+"Report-Msgid-Bugs-To: squid-deb-proxy@packages.debian.org\n"
+"POT-Creation-Date: 2013-05-17 09:43+0200\n"
+"PO-Revision-Date: 2013-06-03 09:35+0200\n"
+"Last-Translator: jipege <jean-pierregiraud@neuf.fr>\n"
+"Language-Team: français <debian-l10n-french@lists.debian.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Gtranslator 2.91.5\n"
+
+#. Type: boolean
+#. Description
+#: ../squid-deb-proxy.templates:2001
+msgid "Allow PPA access?"
+msgstr "Autoriser l'accès aux PPA ?"
+
+#. Type: boolean
+#. Description
+#: ../squid-deb-proxy.templates:2001
+msgid ""
+"By default, squid-deb-proxy does not allow access to Personal Package "
+"Archive (PPA) repositories on Launchpad."
+msgstr ""
+"Par défaut, squid-deb-proxy n'autorise pas l'accès aux archives PPA "
+"(« Personal Package Archive » : archives personnelles de paquets) de "
+"Launchpad."
+
+#. Type: boolean
+#. Description
+#: ../squid-deb-proxy.templates:2001
+msgid "Choosing this option will whitelist these repositories."
+msgstr "Si vous choisissez cette option, ces archives seront autorisées."
+
+#. Type: boolean
+#. Description
+#: ../squid-deb-proxy.templates:3001
+msgid "Allow unrestricted network access?"
+msgstr "Faut-il autoriser un accès sans restriction depuis le réseau ?"
+
+#. Type: boolean
+#. Description
+#: ../squid-deb-proxy.templates:3001
+msgid ""
+"By default, squid-deb-proxy allows access to the cache from private networks "
+"only (10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16)."
+msgstr ""
+"Par défaut, squid-deb-proxy n'autorise l'accès au cache qu'à partir d'un "
+"réseau privé (10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16)."
+
+#. Type: boolean
+#. Description
+#: ../squid-deb-proxy.templates:3001
+msgid "Choosing this option will allow other IP addresses to access the cache."
+msgstr ""
+"Si vous choisissez cette option, l'accès au cache sera autorisé à toute "
+"adresse IP."
