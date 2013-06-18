@@ -1,4 +1,4 @@
-squid-deb-proxy (0.7.1) UNRELEASED; urgency=low
+squid-deb-proxy (0.7.1) unstable; urgency=low
 
   * fix package description, thanks to  martin f krafft
     (closes: #705813)
@@ -28,7 +28,7 @@ squid-deb-proxy (0.7.1) UNRELEASED; urgency=low
   * debian/po/sv.po:
     - added, thanks to "Martin Bagge" (closes: #712652)
   
- -- Michael Vogt <michael.vogt@ubuntu.com>  Mon, 22 Apr 2013 06:32:14 +0200
+ -- Michael Vogt <mvo@debian.org>  Tue, 18 Jun 2013 13:33:41 +0200
 
 squid-deb-proxy (0.7) unstable; urgency=low
 
