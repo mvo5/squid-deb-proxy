@@ -1,3 +1,9 @@
+squid-deb-proxy (0.7.1ubuntu1) saucy; urgency=low
+
+  * Add additional ipv6 localhost address. (LP: #1195430) 
+
+ -- Chris J Arges <chris.j.arges@ubuntu.com>  Thu, 27 Jun 2013 14:18:09 -0500
+
 squid-deb-proxy (0.7.1) unstable; urgency=low
 
   * fix package description, thanks to  martin f krafft
