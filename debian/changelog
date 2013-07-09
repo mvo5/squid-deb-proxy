@@ -3,7 +3,7 @@ squid-deb-proxy (0.7.2) unstable; urgency=low
   [ Chris J Arges ]
   * Add additional ipv6 localhost address. (LP: #1195430) 
 
- -- Chris J Arges <chris.j.arges@ubuntu.com>  Thu, 27 Jun 2013 14:18:09 -0500
+ -- Michael Vogt <mvo@debian.org>  Tue, 09 Jul 2013 16:37:19 +0200
 
 squid-deb-proxy (0.7.1) unstable; urgency=low
 
