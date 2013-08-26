@@ -110,11 +110,11 @@ case "$1" in
 
 	reload|force-reload)
 	log_action_msg "Reloading $DESC configuration files"
-	remove_avahi_service
+        post_stop
 	start-stop-daemon --stop --signal 1 --quiet \
 		--pidfile $PIDFILE --exec $DAEMON -- -f $CONFIG
 	log_action_end_msg 0
-	write_avahi_service
+        post_start
 	;;
 
 	restart)
