@@ -3,6 +3,19 @@ squid-deb-proxy (0.7.3) UNRELEASED; urgency=low
   [ Andrew Simpson ]
   * debian/squid-deb-proxy.init:
     - fix incorrect functions in reload() (closes: #720365)
+  
+  [ Michael Vogt ]
+  * apt-avahi-discover:
+    - when a _apt_proxy._tcp server is found, try to connect to
+      it before using it
+    - when multiple _apt_proxy._tcp servers are found, use the one
+      that provides the quickest answer (closes: #722253, #718788)
+    Thanks to Paul Wise and Julian Andres Klode for the suggestions
+  
+  [ Julian Andres Klode ]
+  * apt-avahi-discover:
+    - Pass -f to avahi-browse to not produce error messages if it cannot 
+      find a service (closes: #722253)
 
  -- Michael Vogt <michael.vogt@ubuntu.com>  Mon, 26 Aug 2013 08:51:55 +0200
 

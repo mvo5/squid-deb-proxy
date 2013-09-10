@@ -3,8 +3,39 @@
 # use avahi to find a _apt_proxy._tcp provider and return
 # a http proxy string suitable for apt
 
+import asyncore
+import functools
 import socket
+import sys
+import time
 from subprocess	import Popen, PIPE
+
+import apt_pkg
+apt_pkg.init_config()
+
+@functools.total_ordering
+class AptAvahiClient(asyncore.dispatcher):
+    def __init__(self, addr):
+        asyncore.dispatcher.__init__(self)
+        if is_ipv6(addr):
+            self.create_socket(socket.AF_INET6, socket.SOCK_STREAM)
+            self.connect( (addr[0], addr[1], 0, 0) )
+        else:
+            self.create_socket(socket.AF_INET, socket.SOCK_STREAM)
+            self.connect(addr)
+        self._time_init = time.time()
+        self.time_to_connect = sys.maxint
+        self.address = addr
+    def handle_connect(self):
+        self.time_to_connect = time.time() - self._time_init
+        self.close()
+    def __eq__(self, other):
+        return self.time_to_connect == other.time_to_connect
+    def __lt__(self, other):
+        return self.time_to_connect < other.time_to_connect
+    def __repr__(self):
+        return "<%s> %s: %s" % (
+            self.__class__.__name__, self.addr, self.time_to_connect)
 
 
 def is_ipv6(a):
@@ -21,12 +52,12 @@ def get_proxy_host_port_from_avahi():
     # addresses to the top.
     addr4 = []
     addr6 = []
-    p = Popen(['avahi-browse', '-kprt', service], stdout=PIPE)
+    p = Popen(['avahi-browse', '-kprtf', service], stdout=PIPE)
     for line in p.stdout:
         if line.startswith('='):
             tokens = line.split(';')
             addr = tokens[7]
-            port = tokens[8]
+            port = int(tokens[8])
             if is_ipv6(addr):
                 # We need to skip ipv6 link-local addresses since 
                 # APT can't use them
@@ -37,15 +68,29 @@ def get_proxy_host_port_from_avahi():
 
     # Run through the offered addresses and see if we we have a bound local
     # address for it.
+    addrs = []
     for (ip, port) in addr6 + addr4:
         try:
             res = socket.getaddrinfo(ip, port, 0, 0, 0, socket.AI_ADDRCONFIG)
             if res:
-                return (ip, port)
+                addrs.append((ip, port))
         except socket.gaierror:
             pass
-    # nothing found
-    return None
+    if not addrs:
+        return None
+    
+    # sort by answering speed
+    hosts = []
+    for addr in addrs:
+        hosts.append(AptAvahiClient(addr))
+    # 2s timeout, arbitray
+    timeout = apt_pkg.config.find_i("APT::Avahi-Discover::Timeout", 2)
+    asyncore.loop(timeout=timeout)
+    if "--debug" in sys.argv:
+        sys.stderr.write("%s\n" % sorted(hosts))
+    fastest_host = sorted(hosts)[0]
+    fastest_address = fastest_host.address
+    return fastest_address
 
 
 if __name__ == "__main__":
