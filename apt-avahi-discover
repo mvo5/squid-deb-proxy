@@ -88,6 +88,11 @@ def get_proxy_host_port_from_avahi():
     asyncore.loop(timeout=timeout)
     if "--debug" in sys.argv:
         sys.stderr.write("%s\n" % sorted(hosts))
+
+    # No host wanted to connect
+    if (all(h.time_to_connect == sys.maxint for h in hosts)):
+        return None
+
     fastest_host = sorted(hosts)[0]
     fastest_address = fastest_host.address
     return fastest_address
