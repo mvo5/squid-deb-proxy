@@ -1,4 +1,4 @@
-squid-deb-proxy (0.7.3) UNRELEASED; urgency=low
+squid-deb-proxy (0.8) unstable; urgency=low
 
   [ Andrew Simpson ]
   * debian/squid-deb-proxy.init:
@@ -17,7 +17,7 @@ squid-deb-proxy (0.7.3) UNRELEASED; urgency=low
     - Pass -f to avahi-browse to not produce error messages if it cannot 
       find a service (closes: #722253)
 
- -- Michael Vogt <michael.vogt@ubuntu.com>  Mon, 26 Aug 2013 08:51:55 +0200
+ -- Michael Vogt <mvo@debian.org>  Tue, 10 Sep 2013 16:15:53 +0200
 
 squid-deb-proxy (0.7.2) unstable; urgency=low
 
