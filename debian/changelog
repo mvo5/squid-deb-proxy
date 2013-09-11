@@ -1,3 +1,11 @@
+squid-deb-proxy (0.9) UNRELEASED; urgency=low
+
+  * apt-avahi-discover:
+    - Fix a check for IPv6 addresses
+    - Really ignore non-accepting hosts (Closes: #722253)
+
+ -- Julian Andres Klode <jak@debian.org>  Tue, 10 Sep 2013 22:46:21 +0200
+
 squid-deb-proxy (0.8) unstable; urgency=low
 
   [ Andrew Simpson ]
