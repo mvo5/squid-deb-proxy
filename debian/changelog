@@ -1,3 +1,12 @@
+squid-deb-proxy (0.8.2) UNRELEASED; urgency=low
+
+  * apt-avahi-discover:
+    - do not depend on python-apt and use /usr/bin/apt-config instead
+      to get the "APT::Avahi-Discover::Timeout" configuration value
+      (closes: #722932)
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Thu, 19 Sep 2013 09:01:09 +0200
+
 squid-deb-proxy (0.8.1) unstable; urgency=low
 
   [ Julian Andres Klode ]

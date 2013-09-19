@@ -5,13 +5,35 @@
 
 import asyncore
 import functools
+import os
 import socket
 import sys
 import time
-from subprocess	import Popen, PIPE
+from subprocess	import Popen, PIPE, call
 
-import apt_pkg
-apt_pkg.init_config()
+DEFAULT_CONNECT_TIMEOUT_SEC = 2
+
+def DEBUG(msg):
+    if "--debug" in sys.argv:
+        sys.stderr.write(msg + "\n")
+
+
+def get_avahi_discover_timeout():
+    APT_AVAHI_TIMEOUT_VAR = "APT::Avahi-Discover::Timeout"
+    p = Popen(
+        ["/usr/bin/apt-config", "shell", "TIMEOUT", APT_AVAHI_TIMEOUT_VAR], 
+        stdout=PIPE)
+    stdout, stderr = p.communicate()
+    if not stdout:
+        DEBUG(
+            "no timeout set, using default '%s'" % DEFAULT_CONNECT_TIMEOUT_SEC)
+        return DEFAULT_CONNECT_TIMEOUT_SEC
+    if not stdout.startswith("TIMEOUT="):
+        raise ValueError("got unexpected apt-config output: '%s'" % stdout)
+    varname, sep, value = stdout.strip().partition("=")
+    timeout = int(value.strip("'"))
+    DEBUG("using timeout: '%s'" % timeout)
+    return timeout
 
 @functools.total_ordering
 class AptAvahiClient(asyncore.dispatcher):
@@ -84,10 +106,9 @@ def get_proxy_host_port_from_avahi():
     for addr in addrs:
         hosts.append(AptAvahiClient(addr))
     # 2s timeout, arbitray
-    timeout = apt_pkg.config.find_i("APT::Avahi-Discover::Timeout", 2)
+    timeout = get_avahi_discover_timeout()
     asyncore.loop(timeout=timeout)
-    if "--debug" in sys.argv:
-        sys.stderr.write("%s\n" % sorted(hosts))
+    DEBUG("sorted hosts: '%s'" % sorted(hosts))
 
     # No host wanted to connect
     if (all(h.time_to_connect == sys.maxint for h in hosts)):
