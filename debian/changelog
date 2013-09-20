@@ -8,6 +8,8 @@ squid-deb-proxy (0.8.3) UNRELEASED; urgency=low
     - add cdn.debian.net to the default allowed destinations
   * apt-avahi-discover:
     - improve --debug output
+  * debian/squid-deb-proxy.init:
+    - ensure that reload re-generates the ACL configuration
 
  -- Michael Vogt <michael.vogt@ubuntu.com>  Fri, 20 Sep 2013 10:01:51 +0200
 
