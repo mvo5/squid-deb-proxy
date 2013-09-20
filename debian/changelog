@@ -1,3 +1,16 @@
+squid-deb-proxy (0.8.3) UNRELEASED; urgency=low
+
+  * debian/squid-deb-proxy.postinst:
+    - use "reload" instead of "restart" to avoid confusing error message
+      that squid-deb-proxy did not start (when it did) on fresh installs
+      or dpkg-reconfigure
+  * mirror-dstdomain.acl.Debian:
+    - add cdn.debian.net to the default allowed destinations
+  * apt-avahi-discover:
+    - improve --debug output
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Fri, 20 Sep 2013 10:01:51 +0200
+
 squid-deb-proxy (0.8.2) unstable; urgency=low
 
   * apt-avahi-discover:

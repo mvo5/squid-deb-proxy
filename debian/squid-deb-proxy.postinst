@@ -113,7 +113,8 @@ EOF
         # workaround for bugginess
         db_stop
 
-        invoke-rc.d squid-deb-proxy restart || true
+        # reload to be on the safe side
+        invoke-rc.d squid-deb-proxy reload || true
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure|triggered)

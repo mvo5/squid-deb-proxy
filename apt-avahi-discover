@@ -75,7 +75,9 @@ def get_proxy_host_port_from_avahi():
     addr4 = []
     addr6 = []
     p = Popen(['avahi-browse', '-kprtf', service], stdout=PIPE)
+    DEBUG("avahi-browse output:")
     for line in p.stdout:
+        DEBUG(" '%s'" % line)
         if line.startswith('='):
             tokens = line.split(';')
             addr = tokens[7]
