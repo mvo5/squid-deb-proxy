@@ -116,7 +116,7 @@ case "$1" in
         pre_start
         # and reload
 	start-stop-daemon --stop --signal 1 --quiet \
-		--pidfile $PIDFILE --exec $DAEMON
+		--pidfile $PIDFILE --exec $DAEMON -- -f $CONFIG
 	log_action_end_msg 0
         # this will start avahi again
         post_start
