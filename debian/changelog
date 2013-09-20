@@ -1,4 +1,4 @@
-squid-deb-proxy (0.8.3) UNRELEASED; urgency=low
+squid-deb-proxy (0.8.3) unstable; urgency=low
 
   * debian/squid-deb-proxy.postinst:
     - use "reload" instead of "restart" to avoid confusing error message
@@ -11,7 +11,7 @@ squid-deb-proxy (0.8.3) UNRELEASED; urgency=low
   * debian/squid-deb-proxy.init:
     - ensure that reload re-generates the ACL configuration
 
- -- Michael Vogt <michael.vogt@ubuntu.com>  Fri, 20 Sep 2013 10:01:51 +0200
+ -- Michael Vogt <mvo@debian.org>  Fri, 20 Sep 2013 16:14:53 +0200
 
 squid-deb-proxy (0.8.2) unstable; urgency=low
 
