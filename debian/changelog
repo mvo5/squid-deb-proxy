@@ -1,3 +1,10 @@
+squid-deb-proxy (0.8.4) unstable; urgency=low
+
+  * mirror-dstdomain.acl.Debian:
+    - add http.debian.net to the allowed destinations (closes: #724229)
+
+ -- Michael Vogt <mvo@debian.org>  Mon, 23 Sep 2013 10:39:35 +0200
+
 squid-deb-proxy (0.8.3) unstable; urgency=low
 
   * debian/squid-deb-proxy.postinst:

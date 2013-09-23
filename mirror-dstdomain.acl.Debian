@@ -7,6 +7,7 @@
 # www.debian.org and friends here too
 .debian.org 
 cdn.debian.net
+http.debian.net
 
 # default mirrors
 #ftp.debian.org 
