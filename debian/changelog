@@ -1,11 +1,11 @@
-squid-deb-proxy (0.8.5) UNRELEASED; urgency=low
+squid-deb-proxy (0.8.5) unstable; urgency=low
 
   [ James Page ]
   * lp:~james-page/squid-deb-proxy/fixup-cache-init:
     Ensure squid does not daemonize when creating cache directories
     (LP: #1247886)
 
- -- Michael Vogt <michael.vogt@ubuntu.com>  Thu, 12 Dec 2013 15:37:50 +0100
+ -- Michael Vogt <mvo@debian.org>  Thu, 12 Dec 2013 22:22:34 +0100
 
 squid-deb-proxy (0.8.4) unstable; urgency=low
 
