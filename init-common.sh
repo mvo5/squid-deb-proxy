@@ -35,7 +35,7 @@ pre_start() {
   install -d -o proxy -g proxy -m 750 /var/cache/squid-deb-proxy/
   install -d -o proxy -g proxy -m 750 /var/log/squid-deb-proxy/
   if [ ! -d /var/cache/squid-deb-proxy/00 ]; then
-   $SQUID -z -f /etc/squid-deb-proxy/squid-deb-proxy.conf
+   $SQUID -z -N -f /etc/squid-deb-proxy/squid-deb-proxy.conf
   fi
 
   # generate pkg blacklist acl file
