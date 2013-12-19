@@ -85,10 +85,8 @@ EOF
 }
 
 post_stop() {
-  if [ -f $AVAHIFILE ]
-  then
-  	rm $AVAHIFILE
-  fi
+  # remove avahi file again
+  rm -f $AVAHIFILE
 }
 
 # from the squid3 debian init script

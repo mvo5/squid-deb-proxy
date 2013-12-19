@@ -20,7 +20,6 @@ DESC="Squid Deb HTTP Proxy"
 DAEMON=/usr/sbin/squid3
 PIDFILE=/var/run/$NAME.pid
 CONFIG=/etc/squid-deb-proxy/squid-deb-proxy.conf
-AVAHIFILE=/etc/avahi/services/squid-deb-proxy.service
 SQUID_ARGS="-YC -f $CONFIG"
 
 [ ! -f /etc/default/squid-deb-proxy ] || . /etc/default/squid-deb-proxy
