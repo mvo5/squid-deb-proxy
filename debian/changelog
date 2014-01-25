@@ -1,10 +1,15 @@
 squid-deb-proxy (0.8.6) UNRELEASED; urgency=low
 
+  [ Michael Vogt ]
   * ensure /etc/avahi/services/squid-deb-proxy.service is removed
     on package removal
   * debian/po/es.po:
     - New Spanish debconf translation, thanks to Camaleón 
       (closes: #733495)
+  
+  [ Chris Glass ]
+  * lp:~tribaal/squid-deb-proxy/extra-default-networks:
+    - add two more example repos
 
  -- Michael Vogt <michael.vogt@ubuntu.com>  Thu, 19 Dec 2013 09:28:14 +0100
 

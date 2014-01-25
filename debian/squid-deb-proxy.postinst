@@ -51,6 +51,7 @@ EOF
 
 # launchpad personal package archives (disabled by default)
 #ppa.launchpad.net
+#private-ppa.launchpad.net
 
 # add additional mirror domains here (disabled by default)
 #linux.dropbox.com
@@ -58,6 +59,7 @@ EOF
 #archive.getdeb.net
 #packages.medibuntu.org
 #dl.google.com
+#repo.steampowered.com
 EOF
         fi
 
