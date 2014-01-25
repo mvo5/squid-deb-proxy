@@ -1,4 +1,4 @@
-squid-deb-proxy (0.8.6) UNRELEASED; urgency=low
+squid-deb-proxy (0.8.6) unstable; urgency=low
 
   [ Michael Vogt ]
   * ensure /etc/avahi/services/squid-deb-proxy.service is removed
@@ -11,7 +11,7 @@ squid-deb-proxy (0.8.6) UNRELEASED; urgency=low
   * lp:~tribaal/squid-deb-proxy/extra-default-networks:
     - add two more example repos
 
- -- Michael Vogt <michael.vogt@ubuntu.com>  Thu, 19 Dec 2013 09:28:14 +0100
+ -- Michael Vogt <mvo@debian.org>  Sat, 25 Jan 2014 22:27:08 +0100
 
 squid-deb-proxy (0.8.5) unstable; urgency=low
 
