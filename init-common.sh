@@ -64,7 +64,7 @@ post_start() {
   # create avahi service
   PORT=$(grep http_port /etc/squid-deb-proxy/squid-deb-proxy.conf|cut -d' ' -f2)
   if [ -n "$PORT" ] && [ -d /etc/avahi/services/ ]; then
-   cat > $AVAHIFILE << EOF
+      (umask 022 && cat > $AVAHIFILE << EOF
 <?xml version="1.0" standalone='no'?>
 <!DOCTYPE service-group SYSTEM "avahi-service.dtd">
 <service-group>
@@ -79,8 +79,7 @@ post_start() {
 	</service>
 </service-group>
 EOF
-  # ensure proper permissions
-  chmod 0644 $AVAHIFILE
+)
   fi
 }
 

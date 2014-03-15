@@ -3,8 +3,11 @@ squid-deb-proxy (0.8.7) UNRELEASED; urgency=low
   * debian/po/es.po:
     - updated debconf translation, thanks to Camaleón
       (closes: #739510)
+  * init-common.sh:
+    - fix squid-deb-proxy restart bug that caused the proxy to disappear
+      from the announced avahi services (closes: 728791)
 
- -- Michael Vogt <michael.vogt@ubuntu.com>  Thu, 20 Feb 2014 07:53:36 +0100
+ -- Michael Vogt <mvo@debian.org>  Thu, 20 Feb 2014 07:53:36 +0100
 
 squid-deb-proxy (0.8.6) unstable; urgency=low
 
