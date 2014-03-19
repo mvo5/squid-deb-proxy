@@ -20,7 +20,7 @@ post-stop script
     post_stop
 end script
 
-start on (local-filesystems and net-device-up IFACE!=lo)
+start on runlevel [2345]
 stop on runlevel [!2345]
 
 script
