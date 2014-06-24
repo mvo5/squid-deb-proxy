@@ -1,3 +1,10 @@
+squid-deb-proxy (0.8.8) UNRELEASED; urgency=low
+
+  [ Vagrant Cascadian ]
+  * remove unowned files on purge (closes: #705995)
+
+ -- Michael Vogt <mvo@debian.org>  Tue, 24 Jun 2014 16:07:05 +0200
+
 squid-deb-proxy (0.8.7) unstable; urgency=low
 
   * debian/po/es.po:
