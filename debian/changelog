@@ -1,4 +1,4 @@
-squid-deb-proxy (0.8.8) UNRELEASED; urgency=low
+squid-deb-proxy (0.8.8) unstable; urgency=low
 
   [ Vagrant Cascadian ]
   * remove unowned files on purge (closes: #705995)
@@ -8,7 +8,7 @@ squid-deb-proxy (0.8.8) UNRELEASED; urgency=low
     - add "refresh-ims" options to the refresh patterns for the 
       index files
 
- -- Michael Vogt <mvo@debian.org>  Tue, 24 Jun 2014 16:07:05 +0200
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Fri, 18 Jul 2014 13:25:47 +0200
 
 squid-deb-proxy (0.8.7) unstable; urgency=low
 
