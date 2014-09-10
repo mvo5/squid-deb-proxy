@@ -9,7 +9,7 @@ squid-deb-proxy (0.8.9) unstable; urgency=low
   * improve README to explain better how to use it when 
     squid-deb-proxy-client is not a option
 
- -- Michael Vogt <michael.vogt@ubuntu.com>  Wed, 10 Sep 2014 15:36:32 +0200
+ -- Michael Vogt <mvo@debian.org>  Wed, 10 Sep 2014 16:07:07 +0200
 
 squid-deb-proxy (0.8.8) unstable; urgency=low
 
@@ -21,7 +21,7 @@ squid-deb-proxy (0.8.8) unstable; urgency=low
     - add "refresh-ims" options to the refresh patterns for the 
       index files
 
- -- Michael Vogt <michael.vogt@ubuntu.com>  Fri, 18 Jul 2014 13:25:47 +0200
+ -- Michael Vogt <mvo@debian.org>  Fri, 18 Jul 2014 13:25:47 +0200
 
 squid-deb-proxy (0.8.7) unstable; urgency=low
 
