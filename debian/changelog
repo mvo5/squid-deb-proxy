@@ -3,6 +3,7 @@ squid-deb-proxy (0.8.9) UNRELEASED; urgency=low
   [ Vagrant Cascadian ]
   * squid-deb-proxy.conf:
     - add refresh patterns for tar.xz,tar.bz2 (closes: #756357)
+    - use squid-deb-proxy specific netdb_filename (closes: #760666)
 
  -- Michael Vogt <michael.vogt@ubuntu.com>  Mon, 18 Aug 2014 11:48:08 +0200
 
