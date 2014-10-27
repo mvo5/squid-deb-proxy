@@ -1,0 +1,64 @@
+# Dutch translation of squid-deb-proxy debconf templates.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the squid-deb-proxy package.
+# Frans Spiesschaert <Frans.Spiesschaert@yucom.be>, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: squid-deb-proxy\n"
+"Report-Msgid-Bugs-To: squid-deb-proxy@packages.debian.org\n"
+"POT-Creation-Date: 2014-09-11 14:48+0000\n"
+"PO-Revision-Date: 2014-10-09 15:29+0200\n"
+"Last-Translator: Frans Spiesschaert <Frans.Spiesschaert@yucom.be>\n"
+"Language-Team: Debian Dutch l10n Team <debian-l10n-dutch@lists.debian.org>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. Type: boolean
+#. Description
+#: ../squid-deb-proxy.templates:2001
+msgid "Allow PPA access?"
+msgstr "Toegang verlenen tot PPA?"
+
+#. Type: boolean
+#. Description
+#: ../squid-deb-proxy.templates:2001
+msgid ""
+"By default, squid-deb-proxy does not allow access to Personal Package "
+"Archive (PPA) repositories on Launchpad."
+msgstr ""
+"Standaard verleent squid-deb-proxy geen toegang tot de Personal Package "
+"Archive (PPA) pakketbronnen op Launchpad."
+
+#. Type: boolean
+#. Description
+#: ../squid-deb-proxy.templates:2001
+msgid "Choosing this option will whitelist these repositories."
+msgstr "Kiezen voor deze optie zal deze pakketbronnen vrijgeven."
+
+#. Type: boolean
+#. Description
+#: ../squid-deb-proxy.templates:3001
+msgid "Allow unrestricted network access?"
+msgstr "Onbeperkte netwerktoegang verlenen?"
+
+#. Type: boolean
+#. Description
+#: ../squid-deb-proxy.templates:3001
+msgid ""
+"By default, squid-deb-proxy allows access to the cache from private networks "
+"only (10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16)."
+msgstr ""
+"Standaard verleent squid-deb-proxy enkel toegang tot de cache aan private "
+"netwerken (10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16)."
+
+#. Type: boolean
+#. Description
+#: ../squid-deb-proxy.templates:3001
+msgid "Choosing this option will allow other IP addresses to access the cache."
+msgstr ""
+"Kiezen voor deze optie zal ook aan andere IP-adressen toelaten om toegang "
+"tot de cache te hebben."

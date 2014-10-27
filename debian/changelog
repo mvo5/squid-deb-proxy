@@ -1,3 +1,11 @@
+squid-deb-proxy (0.8.10) UNRELEASED; urgency=low
+
+  * debian/po/nl.po:
+    - add Dutch translation of squid-deb-proxy debconf messages,
+      thanks to Frans Spiesschaert (closes: 766519)
+
+ -- Michael Vogt <mvo@debian.org>  Mon, 27 Oct 2014 13:49:50 +0100
+
 squid-deb-proxy (0.8.9) unstable; urgency=low
 
   [ Vagrant Cascadian ]
