@@ -1,10 +1,15 @@
-squid-deb-proxy (0.8.10) UNRELEASED; urgency=low
+squid-deb-proxy (0.8.10) unstable; urgency=medium
 
+  [ Michael Vogt ]
   * debian/po/nl.po:
     - add Dutch translation of squid-deb-proxy debconf messages,
       thanks to Frans Spiesschaert (closes: 766519)
+  
+  [ Chris Glass ]
+  * Don't remove the package blacklist file if it is empty when 
+    gathering rules. This should fix LP: #1166667 (closes: #775545)
 
- -- Michael Vogt <mvo@debian.org>  Mon, 27 Oct 2014 13:49:50 +0100
+ -- Michael Vogt <mvo@debian.org>  Thu, 29 Jan 2015 15:50:49 +0100
 
 squid-deb-proxy (0.8.9) unstable; urgency=low
 
