@@ -2,6 +2,10 @@ squid-deb-proxy (0.8.11) UNRELEASED; urgency=low
 
   [ Vagrant Cascadian ]
   * add /etc/resolvconf/update-libc.d/squid-deb-proxy (closes: #780083)
+  
+  [ Robie Basak ]
+  * Simplify upstart "start on" to match squid3, to fix runlevel
+    transition problem (LP: #1456662)
 
  -- Michael Vogt <michael.vogt@ubuntu.com>  Wed, 27 May 2015 08:55:23 +0200
 
