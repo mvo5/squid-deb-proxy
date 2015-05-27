@@ -1,1 +1,2 @@
 var/log/squid-deb-proxy
+etc/resolvconf/update-libc.d

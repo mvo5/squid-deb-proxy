@@ -1,3 +1,10 @@
+squid-deb-proxy (0.8.11) UNRELEASED; urgency=low
+
+  [ Vagrant Cascadian ]
+  * add /etc/resolvconf/update-libc.d/squid-deb-proxy (closes: #780083)
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Wed, 27 May 2015 08:55:23 +0200
+
 squid-deb-proxy (0.8.10) unstable; urgency=medium
 
   [ Michael Vogt ]
