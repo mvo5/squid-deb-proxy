@@ -1,10 +1,10 @@
-squid-deb-proxy (0.8.12) UNRELEASED; urgency=medium
+squid-deb-proxy (0.8.12) unstable; urgency=medium
 
   * squid-deb-proxy.conf:
     - handle Translation-.* the same way as the other indexfiles
       (LP: #1474417). Thanks to Scott Moser.
 
- -- Michael Vogt <michael.vogt@ubuntu.com>  Tue, 14 Jul 2015 16:51:52 +0200
+ -- Michael Vogt <mvo@debian.org>  Thu, 16 Jul 2015 09:13:03 +0200
 
 squid-deb-proxy (0.8.11) unstable; urgency=low
 
