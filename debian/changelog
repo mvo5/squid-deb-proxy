@@ -1,4 +1,4 @@
-squid-deb-proxy (0.8.13) UNRELEASED; urgency=medium
+squid-deb-proxy (0.8.13) unstable; urgency=medium
 
   * add README.md to squid-deb-proxy install, thanks to
     Daniel Stender (closes: 796388)
