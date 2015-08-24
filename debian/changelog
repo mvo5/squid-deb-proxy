@@ -1,3 +1,10 @@
+squid-deb-proxy (0.8.13) UNRELEASED; urgency=medium
+
+  * add README.md to squid-deb-proxy install, thanks to
+    Daniel Stender (closes: 796388)
+
+ -- Michael Vogt <mvo@debian.org>  Mon, 24 Aug 2015 11:54:14 +0200
+
 squid-deb-proxy (0.8.12) unstable; urgency=medium
 
   * squid-deb-proxy.conf:
