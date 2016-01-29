@@ -17,7 +17,7 @@
 
 NAME=squid-deb-proxy
 DESC="Squid Deb HTTP Proxy"
-DAEMON=/usr/sbin/squid3
+DAEMON=/usr/sbin/squid
 PIDFILE=/var/run/$NAME.pid
 CONFIG=/etc/squid-deb-proxy/squid-deb-proxy.conf
 SQUID_ARGS="-YC -f $CONFIG"

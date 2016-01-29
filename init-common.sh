@@ -24,8 +24,6 @@ EOF
 pre_start() {
   if [ -x /usr/sbin/squid ]; then
       SQUID=/usr/sbin/squid
-  elif  [ -x /usr/sbin/squid3 ]; then
-      SQUID=/usr/sbin/squid3
   else
       echo "No squid binary found"
       exit 1
@@ -84,7 +82,7 @@ post_stop() {
   rm -f $AVAHIFILE
 }
 
-# from the squid3 debian init script
+# from the squid debian init script
 find_cache_dir () {
         w="     " # space tab
         res=`sed -ne '

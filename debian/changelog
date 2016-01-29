@@ -1,3 +1,10 @@
+squid-deb-proxy (0.8.14) unstable; urgency=medium
+
+  * depend on squid3 instead of squid, thanks to
+    HIGUCHI Daisuke (VDR dai), closes: #813082
+
+ -- Michael Vogt <mvo@debian.org>  Fri, 29 Jan 2016 17:55:43 +0100
+
 squid-deb-proxy (0.8.13) unstable; urgency=medium
 
   * add README.md to squid-deb-proxy install, thanks to

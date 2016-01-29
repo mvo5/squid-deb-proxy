@@ -15,7 +15,7 @@ Package: squid-deb-proxy
 Architecture: all
 Depends: ${python:Depends},
          ${misc:Depends},
-	 squid3
+	 squid
 Recommends: avahi-utils
 Description: Squid proxy configuration to optimize package downloads
  This package contains a Squid proxy configuration to manage a cache of
