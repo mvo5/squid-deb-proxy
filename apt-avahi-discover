@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 #
 # use avahi to find a _apt_proxy._tcp provider and return
 # a http proxy string suitable for apt
@@ -22,17 +22,17 @@ def get_avahi_discover_timeout():
     APT_AVAHI_TIMEOUT_VAR = "APT::Avahi-Discover::Timeout"
     p = Popen(
         ["/usr/bin/apt-config", "shell", "TIMEOUT", APT_AVAHI_TIMEOUT_VAR], 
-        stdout=PIPE)
+        stdout=PIPE, universal_newlines=True)
     stdout, stderr = p.communicate()
     if not stdout:
         DEBUG(
-            "no timeout set, using default '%s'" % DEFAULT_CONNECT_TIMEOUT_SEC)
+            "no timeout set, using default '{}'".format(DEFAULT_CONNECT_TIMEOUT_SEC))
         return DEFAULT_CONNECT_TIMEOUT_SEC
     if not stdout.startswith("TIMEOUT="):
-        raise ValueError("got unexpected apt-config output: '%s'" % stdout)
+        raise ValueError("got unexpected apt-config output: '{}'".format(stdout))
     varname, sep, value = stdout.strip().partition("=")
     timeout = int(value.strip("'"))
-    DEBUG("using timeout: '%s'" % timeout)
+    DEBUG("using timeout: '{}'".format(timeout))
     return timeout
 
 @functools.total_ordering
@@ -46,7 +46,7 @@ class AptAvahiClient(asyncore.dispatcher):
             self.create_socket(socket.AF_INET, socket.SOCK_STREAM)
             self.connect(addr)
         self._time_init = time.time()
-        self.time_to_connect = sys.maxint
+        self.time_to_connect = sys.maxsize
         self.address = addr
     def handle_connect(self):
         self.time_to_connect = time.time() - self._time_init
@@ -56,7 +56,7 @@ class AptAvahiClient(asyncore.dispatcher):
     def __lt__(self, other):
         return self.time_to_connect < other.time_to_connect
     def __repr__(self):
-        return "<%s> %s: %s" % (
+        return "<{}> {}: {}".format(
             self.__class__.__name__, self.addr, self.time_to_connect)
 
 
@@ -74,10 +74,10 @@ def get_proxy_host_port_from_avahi():
     # addresses to the top.
     addr4 = []
     addr6 = []
-    p = Popen(['avahi-browse', '-kprtf', service], stdout=PIPE)
+    p = Popen(['avahi-browse', '-kprtf', service], stdout=PIPE, universal_newlines=True)
     DEBUG("avahi-browse output:")
     for line in p.stdout:
-        DEBUG(" '%s'" % line)
+        DEBUG(" '{}'".format(line))
         if line.startswith('='):
             tokens = line.split(';')
             addr = tokens[7]
@@ -110,10 +110,10 @@ def get_proxy_host_port_from_avahi():
     # 2s timeout, arbitray
     timeout = get_avahi_discover_timeout()
     asyncore.loop(timeout=timeout)
-    DEBUG("sorted hosts: '%s'" % sorted(hosts))
+    DEBUG("sorted hosts: '{}'".format(sorted(hosts)))
 
     # No host wanted to connect
-    if (all(h.time_to_connect == sys.maxint for h in hosts)):
+    if (all(h.time_to_connect == sys.maxsize for h in hosts)):
         return None
 
     fastest_host = sorted(hosts)[0]
@@ -127,6 +127,6 @@ if __name__ == "__main__":
     if address:
         (ip, port) = address
         if is_ipv6(ip):
-            print "http://[%s]:%s/" % (ip, port)
+            print("http://[{}]:{}/".format(ip, port))
         else:
-            print "http://%s:%s/" % (ip, port)
+            print("http://{}:{}/".format(ip, port))
