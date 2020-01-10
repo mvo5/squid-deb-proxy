@@ -1,3 +1,12 @@
+squid-deb-proxy (0.8.14+nmu2) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * move /etc/apt/conf.d/30autoproxy to under /usr/share/squid-deb-proxy-client
+    and make symlink to it, to avoid package fetch failure after removed its
+    package (Closes: #867682)
+
+ -- Hideki Yamane <henrich@debian.org>  Sat, 16 Mar 2019 15:30:32 +0900
+
 squid-deb-proxy (0.8.14+nmu1) unstable; urgency=medium
 
   * Non-maintainer upload with maintainer consent
