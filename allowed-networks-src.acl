@@ -12,5 +12,8 @@
 fe80::/64
 ::1/128
 
+# IPv6 mesh local
+fd00::/8
+
 # additional non-private networks can be added to the directory:
 #  /etc/squid-deb-proxy/allowed-networks-src.acl.d
