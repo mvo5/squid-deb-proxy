@@ -15,7 +15,7 @@ Package: squid-deb-proxy
 Architecture: all
 Depends: squid,
          ${misc:Depends},
-         ${python:Depends}
+         ${python3:Depends}
 Recommends: avahi-utils
 Description: Squid proxy configuration to optimize package downloads
  This package contains a Squid proxy configuration to manage a cache of
@@ -26,7 +26,7 @@ Package: squid-deb-proxy-client
 Architecture: all
 Depends: apt (>= 0.7.25.3ubuntu1),
          avahi-utils,
-         python,
+         python3,
          ${misc:Depends}
 Description: automatic proxy discovery for APT based on Avahi
  This package contains a helper for the APT http method to discover
