@@ -1,26 +1,27 @@
 Source: squid-deb-proxy
 Section: net
-Priority: extra
+Priority: optional
 Maintainer: Michael Vogt <mvo@debian.org>
-Build-Depends: debhelper (>= 7.0.50),
+Build-Depends: debhelper (>= 12),
                gettext,
                intltool,
                pkg-config,
                po-debconf
-Standards-Version: 3.9.4
+Standards-Version: 4.4.0
 Vcs-Bzr: https://code.launchpad.net/~squid-deb-proxy-developers/squid-deb-proxy/trunk
 Homepage: https://launchpad.net/squid-deb-proxy
 
 Package: squid-deb-proxy
 Architecture: all
-Depends: squid,
-         ${misc:Depends},
-         ${python3:Depends}
+Pre-Depends: ${misc:Pre-Depends}
+Depends: lsb-base,
+         squid,
+         ${misc:Depends}
 Recommends: avahi-utils
 Description: Squid proxy configuration to optimize package downloads
- This package contains a Squid proxy configuration to manage a cache of
- .deb downloads, with optimizations for the types of file present in
- package repositories, and using a dedicated directory and port.
+ This package contains a Squid proxy configuration to manage a cache
+ of .deb downloads, with optimizations for the types of file present
+ in  package repositories, and using a dedicated directory and port.
 
 Package: squid-deb-proxy-client
 Architecture: all

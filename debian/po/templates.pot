@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the squid-deb-proxy package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: squid-deb-proxy\n"
 "Report-Msgid-Bugs-To: squid-deb-proxy@packages.debian.org\n"
-"POT-Creation-Date: 2011-06-30 12:07+0100\n"
+"POT-Creation-Date: 2020-01-10 11:08+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,30 +19,40 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../squid-deb-proxy.templates:1001
-msgid "Allow PPA (Personal Package Archive) access?"
-msgstr ""
-
-#. Type: boolean
-#. Description
-#: ../squid-deb-proxy.templates:1001
-msgid ""
-"Squid-deb-proxy by default will not allow PPA repositories from launchpad. "
-"Selecting Y in this option will activate PPA repo access."
+#: ../squid-deb-proxy.templates:2001
+msgid "Allow PPA access?"
 msgstr ""
 
 #. Type: boolean
 #. Description
 #: ../squid-deb-proxy.templates:2001
+msgid ""
+"By default, squid-deb-proxy does not allow access to Personal Package "
+"Archive (PPA) repositories on Launchpad."
+msgstr ""
+
+#. Type: boolean
+#. Description
+#: ../squid-deb-proxy.templates:2001
+msgid "Choosing this option will whitelist these repositories."
+msgstr ""
+
+#. Type: boolean
+#. Description
+#: ../squid-deb-proxy.templates:3001
 msgid "Allow unrestricted network access?"
 msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../squid-deb-proxy.templates:2001
+#: ../squid-deb-proxy.templates:3001
 msgid ""
-"Squid-deb-proxy restricts access to the cache to private networks only by "
-"default. Selecting Y in this option will allow unrestricted access of all "
-"IPs to access the cache. Selecting N will only allow private networks "
-"(10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16) to access the cache."
+"By default, squid-deb-proxy allows access to the cache from private networks "
+"only (10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16)."
+msgstr ""
+
+#. Type: boolean
+#. Description
+#: ../squid-deb-proxy.templates:3001
+msgid "Choosing this option will allow other IP addresses to access the cache."
 msgstr ""
