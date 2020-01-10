@@ -2,12 +2,12 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # victory <victory.deb@gmail.com>, 2013.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: squid-deb-proxy\n"
 "Report-Msgid-Bugs-To: squid-deb-proxy@packages.debian.org\n"
-"POT-Creation-Date: 2013-05-17 09:43+0200\n"
+"POT-Creation-Date: 2020-01-10 11:08+0100\n"
 "PO-Revision-Date: 2013-05-17 16:43+0900\n"
 "Last-Translator: victory <victory.deb@gmail.com>\n"
 "Language-Team: Japanese <debian-japanese@lists.debian.org>\n"
