@@ -3,6 +3,9 @@
 all:
 	echo "nothing to do"
 
+check:
+	flake8 apt-avahi-discover
+
 install:
 	# dir
 	install -d -m 755 $(DESTDIR)/etc/squid-deb-proxy
