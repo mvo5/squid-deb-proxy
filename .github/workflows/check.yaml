@@ -1,0 +1,12 @@
+name: Run tests
+on: [push]
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v2
+      - name: Run static `make check`
+        run: |
+          sudo apt install flake8
+          make check
