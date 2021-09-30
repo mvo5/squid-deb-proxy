@@ -10,6 +10,7 @@ import socket
 import sys
 import time
 from subprocess	import Popen, PIPE, call
+from syslog import syslog, LOG_INFO, LOG_USER
 
 DEFAULT_CONNECT_TIMEOUT_SEC = 2
 
@@ -58,6 +59,11 @@ class AptAvahiClient(asyncore.dispatcher):
     def __repr__(self):
         return "<{}> {}: {}".format(
             self.__class__.__name__, self.addr, self.time_to_connect)
+    def log(self, message):
+        syslog((LOG_INFO|LOG_USER), '%s\n' % str(message))
+    def log_info(self, message, type='info'):
+        if type not in self.ignore_log_types:
+            self.log('%s: %s' % (type, message))
 
 
 def is_ipv6(a):
