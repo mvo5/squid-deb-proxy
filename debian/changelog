@@ -6,6 +6,16 @@ squid-deb-proxy (0.8.16) UNRELEASED; urgency=medium
 
  -- Mika Pflüger <debian@mikapflueger.de>  Fri, 14 Apr 2023 23:26:56 +0200
 
+squid-deb-proxy (0.8.15+nmu1ubuntu1) impish; urgency=medium
+
+  [ Michael Vogt ]
+  * apt-avahi-discover: use syslog for logging
+    in AptAvahiClient, thanks to Jason Pepas
+    (jasonpepas@gmail.com).
+    (LP: #1505670).
+
+ -- Miriam España Acebal <miriam.espana@canonical.com>  Tue, 05 Oct 2021 11:23:59 +0200
+
 squid-deb-proxy (0.8.15+nmu1) unstable; urgency=medium
 
   * Non-maintainer upload.
