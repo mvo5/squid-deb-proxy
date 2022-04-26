@@ -3,7 +3,7 @@
 # use avahi to find a _apt_proxy._tcp provider and return
 # a http proxy string suitable for apt
 
-import asyncore
+import asyncio
 import functools
 import socket
 import sys
@@ -41,22 +41,16 @@ def get_avahi_discover_timeout():
 
 
 @functools.total_ordering
-class AptAvahiClient(asyncore.dispatcher):
+class AptAvahiClient:
     def __init__(self, addr):
-        asyncore.dispatcher.__init__(self)
-        if is_ipv6(addr[0]):
-            self.create_socket(socket.AF_INET6, socket.SOCK_STREAM)
-            self.connect((addr[0], addr[1], 0, 0))
-        else:
-            self.create_socket(socket.AF_INET, socket.SOCK_STREAM)
-            self.connect(addr)
-        self._time_init = time.time()
         self.time_to_connect = sys.maxsize
         self.address = addr
 
-    def handle_connect(self):
-        self.time_to_connect = time.time() - self._time_init
-        self.close()
+    async def time_connect(self):
+        _time_init = time.time()
+        reader, writer = await asyncio.open_connection(self.address[0], self.address[1])
+        self.time_to_connect = time.time() - _time_init
+        writer.close()
 
     def __eq__(self, other):
         return self.time_to_connect == other.time_to_connect
@@ -66,7 +60,7 @@ class AptAvahiClient(asyncore.dispatcher):
 
     def __repr__(self):
         return "<{}> {}: {}".format(
-            self.__class__.__name__, self.addr, self.time_to_connect)
+            self.__class__.__name__, self.address, self.time_to_connect)
 
     def log(self, message):
         syslog((LOG_INFO | LOG_USER), '%s\n' % str(message))
@@ -128,7 +122,15 @@ def get_proxy_host_port_from_avahi():
         hosts.append(AptAvahiClient(addr))
     # 2s timeout, arbitray
     timeout = get_avahi_discover_timeout()
-    asyncore.loop(timeout=timeout)
+
+    async def gather_hosts():
+        await asyncio.gather(*[h.time_connect() for h in hosts])
+
+    try:
+        asyncio.run(asyncio.wait_for(gather_hosts(), timeout=timeout))
+    except asyncio.TimeoutError:
+        pass
+
     DEBUG("sorted hosts: '{}'".format(sorted(hosts)))
 
     # No host wanted to connect
