@@ -48,7 +48,8 @@ class AptAvahiClient:
 
     async def time_connect(self):
         _time_init = time.time()
-        reader, writer = await asyncio.open_connection(self.address[0], self.address[1])
+        reader, writer = await asyncio.open_connection(
+            self.address[0], self.address[1])
         self.time_to_connect = time.time() - _time_init
         writer.close()
 
