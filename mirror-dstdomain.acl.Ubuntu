@@ -4,6 +4,7 @@
 
 # default ubuntu and ubuntu country archive mirrors
 .archive.ubuntu.com 
+esm.ubuntu.com
 ports.ubuntu.com 
 security.ubuntu.com
 ddebs.ubuntu.com
