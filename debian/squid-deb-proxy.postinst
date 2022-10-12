@@ -51,7 +51,9 @@ EOF
 
 # launchpad personal package archives (disabled by default)
 #ppa.launchpad.net
+#ppa.launchpadcontent.net
 #private-ppa.launchpad.net
+#private-ppa.launchpadcontent.net
 
 # add additional mirror domains here (disabled by default)
 #linux.dropbox.com
@@ -86,6 +88,7 @@ EOF
 #   sudo dpkg-reconfigure -plow squid-deb-proxy
 # to change
 ppa.launchpad.net
+ppa.launchpadcontent.net
 EOF
                 ;;
             *)
