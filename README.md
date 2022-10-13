@@ -47,7 +47,7 @@ By default from any request from a private (10.0.0.0/8, 172.16.0.0/12,
 #### Ubuntu
 
 It will allow access to .archive.ubuntu.com, archive.canonical.com,
-extras.ubuntu.com and changelogs.ubuntu.com.
+esm.ubuntu.com, extras.ubuntu.com and changelogs.ubuntu.com.
 
 #### Debian
 
