@@ -6,7 +6,8 @@ Build-Depends: debhelper (>= 12),
                gettext,
                intltool,
                pkg-config,
-               po-debconf
+               po-debconf,
+               flake8
 Standards-Version: 4.4.0
 Vcs-Bzr: https://code.launchpad.net/~squid-deb-proxy-developers/squid-deb-proxy/trunk
 Homepage: https://launchpad.net/squid-deb-proxy
