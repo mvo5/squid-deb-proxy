@@ -47,11 +47,14 @@ class AptAvahiClient:
         self.address = addr
 
     async def time_connect(self):
-        _time_init = time.time()
-        reader, writer = await asyncio.open_connection(
-            self.address[0], self.address[1])
-        self.time_to_connect = time.time() - _time_init
-        writer.close()
+        try:
+            _time_init = time.time()
+            reader, writer = await asyncio.open_connection(
+                self.address[0], self.address[1])
+            self.time_to_connect = time.time() - _time_init
+            writer.close()
+        except Exception:
+            pass
 
     def __eq__(self, other):
         return self.time_to_connect == other.time_to_connect
