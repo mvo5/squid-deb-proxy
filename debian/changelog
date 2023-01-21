@@ -6,6 +6,20 @@ squid-deb-proxy (0.8.16) UNRELEASED; urgency=medium
 
  -- Mika Pflüger <debian@mikapflueger.de>  Fri, 14 Apr 2023 23:26:56 +0200
 
+squid-deb-proxy (0.8.15+nmu1ubuntu4) lunar; urgency=medium
+
+  * fix regression from LP: #1963794 with patch from Jesse McDonald
+
+ -- Rolf Leggewie <foss@leggewie.org>  Sat, 21 Jan 2023 09:39:59 +0100
+
+squid-deb-proxy (0.8.15+nmu1ubuntu3) lunar; urgency=medium
+
+  * Reverse change made in 0.8.15+nmu1ubuntu2
+    - It caused a regression which needs to be investigated further
+      (LP: #2002562).
+
+ -- Gunnar Hjalmarsson <gunnarhj@ubuntu.com>  Fri, 13 Jan 2023 02:46:15 +0100
+
 squid-deb-proxy (0.8.15+nmu1ubuntu2) lunar; urgency=medium
 
   * backport latest apt-avahi-discover from upstream commit
