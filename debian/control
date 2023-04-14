@@ -9,8 +9,9 @@ Build-Depends: debhelper (>= 12),
                po-debconf,
                flake8
 Standards-Version: 4.4.0
-Vcs-Bzr: https://code.launchpad.net/~squid-deb-proxy-developers/squid-deb-proxy/trunk
-Homepage: https://launchpad.net/squid-deb-proxy
+Vcs-Browser: https://github.com/mvo5/squid-deb-proxy
+Vcs-Git: https://github.com/mvo5/squid-deb-proxy.git
+Homepage: https://github.com/mvo5/squid-deb-proxy
 
 Package: squid-deb-proxy
 Architecture: all
@@ -39,7 +40,7 @@ Description: automatic proxy discovery for APT based on Avahi
  that publishes the service as _apt_proxy._tcp.
 
 Package: squid-deb-proxy-client-udeb
-XC-Package-Type: udeb
+Package-Type: udeb
 Section: debian-installer
 Architecture: all
 Depends: configured-network,
