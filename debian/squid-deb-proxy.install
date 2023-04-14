@@ -1,3 +1,4 @@
 ../update-libc.d etc/resolvconf/
 etc/squid-deb-proxy
 init-common.sh usr/share/squid-deb-proxy/
+../apparmor-profiles/* etc/apparmor.d/abstractions/squid-deb-proxy/
