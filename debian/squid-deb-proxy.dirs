@@ -1,2 +1,3 @@
 etc/resolvconf/update-libc.d
+etc/apparmor.d/abstractions/squid-deb-proxy
 var/log/squid-deb-proxy

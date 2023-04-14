@@ -1,3 +1,10 @@
+squid-deb-proxy (0.8.15+nmu1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Add apparmor profiles to work (Closes: #932501)
+
+ -- Hideki Yamane <henrich@debian.org>  Mon, 14 Jun 2021 23:41:11 +0900
+
 squid-deb-proxy (0.8.15) unstable; urgency=medium
 
   [ Graham Cantin ]
