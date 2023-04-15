@@ -1,0 +1,6 @@
+# vim:syntax=apparmor
+
+    /etc/squid-deb-proxy/** r,
+    /var/log/squid-deb-proxy/* rw,
+    /run/squid-deb-proxy.pid rwk,
+    /var/cache/squid-deb-proxy/** rw,
