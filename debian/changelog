@@ -1,4 +1,4 @@
-squid-deb-proxy (0.8.16) UNRELEASED; urgency=medium
+squid-deb-proxy (0.8.16) unstable; urgency=medium
 
   [ Mika Pflüger ]
   * Merged NMU changes, thanks to Hideki
@@ -33,7 +33,7 @@ squid-deb-proxy (0.8.16) UNRELEASED; urgency=medium
   [ Gunnar Hjalmarsson ]
   * 0.8.15+nmu1ubuntu3, thank you!
 
- -- Michael Vogt <mvo@debian.org>>  Fri, 24 May 2024 09:04:54 +0200
+ -- Michael Vogt <mvo@debian.org>>  Fri, 24 May 2024 09:18:30 +0200
 
 squid-deb-proxy (0.8.15+nmu1ubuntu4) lunar; urgency=medium
 
