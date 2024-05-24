@@ -4,7 +4,36 @@ squid-deb-proxy (0.8.16) UNRELEASED; urgency=medium
   * Merged NMU changes, thanks to Hideki
   * debian/control: update VCS and homepage metadata (Closes: #999647)
 
- -- Mika Pflüger <debian@mikapflueger.de>  Fri, 14 Apr 2023 23:26:56 +0200
+  [ Michael Vogt ]
+  * apt-avahi-discover: use syslog for logging in AptAvahiClient
+    Patch from `jasonpepas@gmail.com` - thanks!
+  * debian: add gbp.conf
+  * Makefile, apt-avahi-discover: make `flake8` clean via `make check`
+  * github: add simple workflow
+
+  [ Jesse McDonald ]
+  * port from asyncore to asyncio
+
+  [ Mark Esler ]
+  * d/control: add flake8 Build-Depends
+  * 30autoproxy: update apt-transport-http syntax
+  * d/squid-deb-proxy.postinst: add launchpadcontent
+  * mirror-dstdomain.acl.Ubuntu: add esm.ubuntu.com
+
+  [ Hideki Yamane ]
+  * 0.8.15+nmu1, thank you!
+
+  [ Miriam Espana Acebal ]
+  * 0.8.15+nmu1ubuntu1, thank you!
+
+  [ Rolf Leggewie ]
+  * 0.8.15+nmu1ubuntu2, thank you!
+  * 0.8.15+nmu1ubuntu4 (patches unapplied)
+
+  [ Gunnar Hjalmarsson ]
+  * 0.8.15+nmu1ubuntu3, thank you!
+
+ -- Michael Vogt <mvo@debian.org>>  Fri, 24 May 2024 09:04:54 +0200
 
 squid-deb-proxy (0.8.15+nmu1ubuntu4) lunar; urgency=medium
 
