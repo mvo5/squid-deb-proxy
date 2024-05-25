@@ -5,7 +5,7 @@ Maintainer: Michael Vogt <mvo@debian.org>
 Build-Depends: debhelper (>= 12),
                gettext,
                intltool,
-               pkg-config,
+               pkgconf,
                po-debconf,
                flake8
 Standards-Version: 4.4.0
